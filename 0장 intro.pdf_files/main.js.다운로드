@@ -1,0 +1,25 @@
+$("document").ready(function(){
+
+
+	$.uiGenerator();
+	
+	/* Process Start */
+	setTimeout(function(){
+		/* Process
+		* 1. File check from server
+		* 2. Trans Document file
+		* 3. File state check - translating, converting, ready
+		* 4. When file ready - Document View 
+		*/
+		
+		$.ubdocStart();
+		$("html").css('height',"100%");
+		$("html").css('overflow',"hidden");	
+		$("body").css('height',"100%");	
+		$("body").css('overflow',"hidden");		
+		$("#app").css('height',"100%");
+		$("#container").css('height',"100%");			
+		}, 250);
+
+
+});

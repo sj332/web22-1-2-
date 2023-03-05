@@ -1,0 +1,283 @@
+<! DOCTYPE html>
+<html>
+ <head>
+  <meta author="2214347 이세진">
+  <title>웹프로그래밍첫걸음_2214347이세진_중간대체과제_보고서</title>
+ </head>
+<body bgcolor="whitesmoke">
+<br>
+<h1 align="center" style="font-family:serif;" style="font-size:40px;"> 웹프로그래밍 보고서</h1>
+<br>
+<hr width="800">
+<p> 
+<a id="up"></a>
+<pre>
+<!-중간고사 대체과제
+
+주석, 하이퍼링크
+지금까지 배운 HTML5 태그를 사용하여 정리한 보고서를 웹문서 형식으로 제출할 것!
+
+(다양한 태그를 많이 사용하는 것이 점수 높음. 성실도 평가가 주안점)-->
+</pre>
+
+
+<header>
+<nav align="center" style="font-family:serif;">
+<p><h3>&nbsp;&nbsp;&lt;목차,좌표 연결&gt;</h3></p>
+<br>
+<p><a href="FIRST.html" >&nbsp;&nbsp;1장&nbsp;&nbsp;인터넷과 웹 환경</a></p>
+
+<p><a href="SECOND.html" >&nbsp;&nbsp;2장&nbsp;&nbsp;HTML5 문서 기본 이해하기</a></p>
+
+<p><a href="THIRD.html" >&nbsp;&nbsp;3장&nbsp;&nbsp;문서 구조 표현하기</a></p>
+
+<p><a href="FOURTH.html" >&nbsp;&nbsp;4장&nbsp;&nbsp;링크와 멀티미디어 표현하기</a></p>
+
+<p><a href="FIFTH.html" >&nbsp;&nbsp;5장&nbsp;&nbsp;폼 활용하기</a></p>
+</nav></header>
+
+
+
+<br><br><br>
+<aside align="right" >
+<a href="index.html">
+<input type="button" value="처음 화면으로 돌아가기"
+style="font-family:serif;"></a>
+
+<a href="REVIEW.html" target="_blank"> <input type="button" 
+value="리뷰 작성"  
+style="font-family:serif;"></a>
+</aside>
+<hr width="800">
+<article>
+<section>
+
+
+
+<br>
+<h2 align="center"style="font-family:serif;">
+5장 폼 활용하기</h2>
+<section style="font-family:serif;">
+
+<br><br>
+<ol>
+<li><h1><em>&lt;form&gt;요소</em></h1></li>
+<!--required,novalidate
+&lt;input&gt;요소의 속성
+pattern 속성
+placeholder 속성-->
+<p style="border:1px solid black;">&lt;form&gt;요소의 사용</p>
+<ul><li>회원가입, 상품구매, 키워드 검색 등 사용자로부터 정보를 받을 때</li>
+<li>사용자와 애플리케이션이 상호작용</li>
+<li>사용자 입력 ⇒ 전송버튼 ⇒ 애플리케이션에 전달 ⇒ 실행결과 반환</li>
+</ul>
+<p style="border:1px solid black;">&lt;form&gt;요소의 역할</p>
+<ul>
+<li>사용자가 입력하는 정보를 하나로 묶어서 애플리케이션에 전달</li>
+<li>다양한 입력 양식을 그룹핑하고 전송방법을 설정</li>
+<li>&lt;form&gt; 요소 내 사용자의 정보 입력 양식</li>
+<li>&lt;input&gt;, &lt;textarea&gt;, &lt;select&gt; 등의 입력 요소를 이용</li>
+</ul>
+<br>
+<table border="1">
+<caption>&lt;form&gt;요소</caption>
+<thead>
+<tr><th>요소 이름</th><th>속성</th><th colspan="2">속성 설명</th></tr>
+</thead>
+<tbody>
+<tr><td rowspan="4">&lt;form&gt;요소</td>
+<td rowspan="2">method 속성</td>
+<td rowspan="2">데이터 전송 방식 지정</td>
+<td>get방식</td></tr>
+<tr><td>post방식</td></tr>
+<tr><td>action 속성</td><td colspan="2">데이터 처리할 애플리케이션 주소 (웹서버 경우 URL)</td></tr>
+<tr><td>name속성</td><td colspan="2">폼 요소에 대한 이름</td></tr>
+</tbody>
+</table>
+<br>
+<h2>method 속성</h2>
+<table border="1">
+<caption>method속성</caption>
+<tr><td>get방식</td><td>post방식</td></tr>
+<tr><td>전송할 데이터를 URL 주소 뒤에 포함</td><td>프로그램의 입출력 방식을 사용</td></tr>
+<tr><td>간단한 데이터에는 편리, 그러나 보안에 취약</td><td>데이터 양에 제한 없다</td></tr>
+</table>
+<h2>action 속성</h2>
+데이터 처리할 애플리케이션 주소 (웹서버 경우 URL)
+<h2>name 속성</h2>
+폼 요소에 대한 이름
+애플리케이션에 전달될 변수명
+<br>
+<li><h1><em>&lt;input&gt; 요소</em></h1></li>
+<ol>
+<li>type 속성: 입력 폼의 유형</li>
+<ul>
+<li>텍스트 관련: <a href="#text">text</a>, <a href="#password">password</a></li>
+<li>선택 관련 : <a href="#radio">radio</a>, <a href="#checkbox">checkbox</a></li>
+<li>버튼 : <a href="#submit">submit</a>, 
+<a href="#reset">reset</a>, 
+<a href="#button">button</a>, 
+<a href="#image">image</a></li>
+<li>기타 : 
+<a href="#file">file</a>, 
+<a href="#hidden">hidden</a></li>
+</ul>
+<li>name 속성(문자열 입력 필드, 한 줄)</li>
+<ul><li>애플리케이션에 전달될 변수명
+</li></ul>
+<li>value 속성(문자열 입력 필드, 한 줄)</li>
+<ul><li>value 속성 : 입력 받은 값을 전달 (입력창 초기문자)
+</li></ul>
+<li>min , max(날짜) 속성</li>
+
+<li>&lt;input&gt;요소에 추가된 새로운 입력 키워드
+<ul>
+<li>텍스트 관련: <a href="#email">email</a>, 
+<a href="#URL">URL</a>, 
+<a href="#tel">tel</a>, 
+<a href="#search">search</a></li>
+<li>날짜와 시간 : <a href="#date">date</date>, 
+<a href="#month">month</a>, 
+<a href="#week">week</a>, 
+<a href="#time">time</a>, 
+<a href="#datetime">datetime</a>, 
+<a href="#datetime-local">datetime-local</a></li>
+<li>색상 및 숫자: <a href="#number">number</a>, 
+<a href="#range">range</a>, 
+<a href="#color">color</a></li>
+
+</ul>
+</ol>
+<h2>type 속성</h2>
+<dl><dt style="border:1px solid black;"><a id="password">암호 입력 필드 "password"</a></dt>
+<dd>보안이 필요한 문자 입력, ‘•’ 으로 표시 (더 이상 보호 기능 없음)</dd>
+<dt style="border:1px solid black;"><a id="radio">라디오 버튼, "radio"</a></dt>
+<dd>name 속성값이 같은 그룹에서 value 값을 하나만 선택하여 전달</dd>
+<dd>예, “member=yes&sex=male”의 형태로 전달</dd>
+<dt style="border:1px solid black;"><a id="checkbox">체크박스 선택, "checkbox"</a></dt>
+<dd>체크박스에 표시된 모든 value 속성값 들이 애플리케이션으로 전송</dd>
+<dt style="border:1px solid black;"><a id="submit">전송 버튼, "submit"</a></dt>
+<dd>입력 데이터 전달</dd>
+<dd>&lt;form&gt; 요소에 있는 모든 입력 데이터가 &lt;form&gt;의 action 속성에서 지정한 애플리케이션 프로그램으로 전송</dd>
+<dt style="border:1px solid black;"><a id="reset">초기화 버튼, "reset"</a></dt>
+<dd>현재 입력된 양식을 모두 지움</dd>
+<dt style="border:1px solid black;"><a id="button">일반 버튼, "button"</a></dt>
+<dd>다양한 용도로 사용</dd>
+<dt style="border:1px solid black;"><a id="image">이미지 버튼, "image"</a></dt>
+<dd>alt 대체 문자열 사용 가능</dd>
+<dt style="border:1px solid black;"><a id="file">파일 선택하기, "file"</a></dt>
+<dd>파일 업로드 가능</dd>
+<dt style="border:1px solid black;"><a id="hidden">데이터 숨김, "hidden"</a></dt>
+<dd>시스템에서 특정 데이터를 처리하고 싶을 때</dd>
+<dd>예: 사용자 IP 주소</dd>
+</dl>
+<h2>추가된 서식이 있는 type의 키워드</h2>
+<dl>
+<dt style="border:1px solid black;"><a id ="email">이메일 주소입력, "email"</a></dt>
+<dd>이메일 주소가 존재 하는지 까지는 확인 불가 이나, 형식이 맞게 작성되었는지는 확인</dd>
+<br>
+<dt style="border:1px solid black;"><a id="URL"></a>URL 주소입력, "URL"</dt>
+<dd>인터넷 주소 표기 규정에 맞게 “http://” 가 추가 되었는지 확인해 줌</dd>
+<dd>또는 value 속성으로 미리 “http://” 를 지정할 수도 있다</dd>
+<br>
+<dt style="border:1px solid black;"><a id="search">검색창 입력, "search"</a></dt>
+<dd>검색어를 입력하면 오른쪽에 “X”가 표시되어 입력한 검색어를 취소할 수 있음</dd>
+<br>
+<dt style="border:1px solid black;"><a id="date">날짜 입력(일), "date"</a></dt>
+<dd>연-월-일</dd>
+<br>
+<dt style="border:1px solid black;"><a id="month">날짜 입력(월), "month"</a></dt>
+<dd>연-월</dd>
+<br>
+<dt style="border:1px solid black;"><a id="week">날짜 입력(주), "week"</a></dt>
+<dd>연-주 (번호순서 1월 첫 주가 ‘W01’)</dd>
+<br>
+<dt style="border:1px solid black;"><a id="time">"위/아래” 버튼으로 시간 조정, "time"</a></dt>
+<br>
+<dt style="border:1px solid black;"><a id="datetime">UTC 국제표준 시간대, "datetime"</a></dt>
+<br>
+<dt style="border:1px solid black;"><a id="datetime-local">현지 시간, "datetime-local"</a></dt>
+</dl>
+
+<h2>value 속성</h2>
+입력 받은 값을 전달 (입력창 초기문자)
+<h2>pattern 속성</h2>
+전화번호 입력
+<ul>
+<li>원하는 전화번호와 자리수에 유효한 패턴을 지정</li>
+<li>정규 표현식으로 정의, 자바스크립트에서 사용하는 패턴과 동일</li>
+<li>pattern=”[A-Za-z]{no}” , pattern=”[0-9]{no}” , 
+pattern=”[0-9]+” , pattern=”[A-Za-z0-9]{min, max}”</li>
+</ul>
+<h2>placeholder 속성</h2>
+입력할 자리수 표시 (단순히 표시만) 
+<h2>min 속성, max 속성</h2>
+
+
+<br><br>
+<li><h1><em>&lt;textarea&gt;요소</em></h1></li>
+텍스트 영역 필드(여러줄)
+<table>
+<tr><td>표시 영역보다 많은 텍스트를 입력하면 스크롤바</td>
+<td>&lt;textarea name=”이름” cols=”열의 수” rows=”행의 수”&gt; 
+&lt;/textarea&gt;</td>
+</table>
+
+<br><br>
+<li><h1><em>&lt;select&gt;요소</em></h1></li>
+<li><h1><em>&lt;select&gt;요소 내에 &lt;option&gt;항목</em></h1></li>
+<ul>
+<li>드롭다운 형태(size= 1), 혹은 스크롤 박스 형태(size > 1)</li>
+<li>multiple 속성 : 다중 선택</li>
+<li>각 항목은 &lt;select&gt; 요소 내에서 &lt;option&gt; 요소로 정의</li>
+</ul>
+select요소 내의 &lt;option&gt;요소
+
+<br><br>
+<li><h1><em>&lt;label &gt;요소</em></h1></li>
+텍스트 라벨: 특정 입력 필드에 연결
+<ul>
+<li>데이터 전달에는 영향이 없음</li>
+<li>버튼이외의 텍스트영역을 선택해도 선택이 가능</li>
+<li>&lt;label for=”입력아이디”&gt;</li>
+</ul>
+
+<br><br>
+<li><h1><em>&lt;fieldset&gt;요소</em></h1></li>
+그룹핑
+<table border="1">
+<caption>&lt;fieldset&gt;요소</caption>
+<tr><td rowspan="3">
+<ul>
+<li>폼 양식을 그룹핑하는 범위를 지정</li>
+<li>사용자의 시각적 편의를 위해서 제공</li>
+<li>입력 필드의 그룹 주위에 기본 스타일로 테두리 선</li>
+</ul></td><td>name 속성 : 그룹의 이름을 지정하는 속성</td></tr>
+<tr><td>form 속성 : 폼과 연결</td></tr>
+<tr><td>disabled 속성 : 그룹 내의 모든 하위 입력 요소들을 비활성화</td></tr>
+</table>
+
+<li><h1><em>&lt;legend&gt;요소</em></h1></li>
+<ul>
+<li>그룹을 구분하기 위한 그룹의 제목 라벨</li>
+<li>&lt;fieldset&gt; 요소에 포함되는 첫 번째 자식 요소로서 한번만 사용</li>
+<li>그룹 라벨의 스타일은 그룹을 구분하는 선의 중간에 걸쳐서 표시</li>
+</ul>
+</section>
+
+</ol>
+
+</article>
+<br><br><br>
+<aside>
+<a href="#up"><input type="button" value="맨위로"
+style="font-family:serif;"></a>
+&nbsp;
+</aside>
+<footer>
+<pre align="center"
+style="font-family:serif;">&copy;2214347 이세진&amp; 숙명여자대학교 웹프로그래밍 첫걸음
+</pre>
+</footer>
+</body>
+</html>

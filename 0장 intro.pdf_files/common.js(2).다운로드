@@ -1,0 +1,543 @@
+(function($){
+	
+
+	$.tag_strip = function(html)
+	{
+	   var tmp = document.createElement("DIV");
+	   tmp.innerHTML = html; 
+	   return tmp.textContent || tmp.innerText || "";
+	}
+
+	$.get_meta = function(property){ // Don't Confuse between php = $_GET '[]' this $.GET '()' 
+		var meta_content  = $("meta[property='" + property + "']").attr("content");
+		return meta_content;
+	}
+
+	$.GET = function(name){ // Don't Confuse between php = $_GET '[]' this $.GET '()' 
+		return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+	}
+
+	/* testing */
+  	$.val_email = function(email) {
+		return !/^([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x22([^\x0d\x22\x5c\x80-\xff]|\x5c[\x00-\x7f])*\x22))*\x40([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d)(\x2e([^\x00-\x20\x22\x28\x29\x2c\x2e\x3a-\x3c\x3e\x40\x5b-\x5d\x7f-\xff]+|\x5b([^\x0d\x5b-\x5d\x80-\xff]|\x5c[\x00-\x7f])*\x5d))*$/.test( email );
+	}
+	
+	$.val_password = function(password, password_confirm){ // 6~15, a-A, �뱀닔臾몄옄
+		var res = false;
+		
+		if(password == password_confirm){
+		
+			if(!password.match(/^.*(?=^.{6,15}$)(?=.*\d)(?=.*[a-zA-Z])(?=.*[ !@#$%^&*\-\[\] ]).*$/)){
+				return true; // error = true
+			}else{
+				return false; // error = false
+			}
+			
+		}else{
+			return false; // error = false
+		}
+		
+
+	}
+	
+	/* testing */	
+	$.val_Special = function(str){
+	     var iChars = "!@#$%^&*()+=-[]\\\';,./{}|\":<>?~_";
+		   for (var i = 0; i < str.length; i++) {
+			if (iChars.indexOf(str.charAt(i)) != -1) {
+				return false;
+			}
+		  }	
+	}
+
+	/* testing */	
+	$.cnt_special = function(str){
+     var iChars = "!@#$%^&*()+=-[]\\\';,./{}|\":<>?~_";
+     var cntSpecial = 0;
+
+	   for (var i = 0; i < str.length; i++) {
+			if (iChars.indexOf(str.charAt(i)) != -1) {
+				cntSpecial++;
+			}
+		  }	
+	  return cntSpecial;
+	}
+	
+	/* testing */
+	$.val_Num = function(num){
+      var state = !isNaN(num);
+	  return state;				
+	}
+
+	$.getErrMsg = function(error_code){
+		var _token  = $("meta[property='moa:token']").attr("content");		
+		$.ajax({
+		          type: "post",
+		          url: "/getErrMsg",
+		          dataType: 'json',
+		          data: {_token:_token, error_code:error_code},
+		          success: function(data){
+				  		return data;
+				  		
+				  		//showMessage(data.comment);
+		          },
+		          error: function(request,status,error){
+		               //alert("Sorry Something wrong.");
+		          },
+		          done: function(){	
+					  
+		          }
+	    });
+		
+	}
+
+	/* Show up POPUP Center care about dual Screen */
+	$.popupCenter = function(url, title, w, h) { // It's from StackFlow but can't remember Address Sorry.
+	    // Fixes dual-screen position                         Most browsers      Firefox
+	    var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : screen.left;
+	    var dualScreenTop = window.screenTop != undefined ? window.screenTop : screen.top;
+	
+	    width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+	    height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+	
+	    var left = ((width / 2) - (w / 2)) + dualScreenLeft;
+	    var top = ((height / 2) - (h / 2)) + dualScreenTop;
+	    var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+	
+	    // Puts focus on the newWindow
+	    if (window.focus) {
+	        newWindow.focus();
+	    }
+	}
+
+	$.codeToHtml = function(code){
+			code = code.replace(/&/g, '&amp;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+				.replace(/\//g, '&#x2F;');
+				
+			return code;
+	}
+	$.fn.tagDataListing = function(tags){
+
+		var tagClearBox = this;
+		
+		if(tags != ""){
+		    var tag = tags.split(",");
+				var tagHtml = '';
+				$.each(tag, function(idx, val){
+					tagHtml += '<li data-val="' + val + '">';
+					tagHtml += '<div class="tagRemove leftBox"><i class="icon-remove-circle"></i></div>';
+					tagHtml += '<div class="tagLabel leftBox">' + val + '</div>';
+					tagHtml += '<div class="clear"></div>';
+					tagHtml += '</li>';									
+				});
+				
+				$(tagHtml).insertBefore(tagClearBox);
+		    $(".tagRemove").off().click(function(){
+			    $(this).parent('li').remove();  
+		    });	
+			
+		}
+	}
+
+	$.fn.tagDataGenerator = function()
+	{
+		var tagObjectBox = this;
+
+		var tags = '';
+		var size = tagObjectBox.children('ul').children('li').size();
+	
+		tagObjectBox.children('ul').children('li').each(function( index ) {
+			
+			if(index < size - 1){		
+			  	tags += $(this).attr('data-val') + ",";
+			}else{
+				tags += $(this).attr('data-val');
+				
+			}
+	
+		});
+		//console.log(tags);
+		
+		return tags;
+	}
+
+	$.rawurlencode = function(str){
+		  //       discuss at: http://phpjs.org/functions/rawurlencode/
+		  //      original by: Brett Zamir (http://brett-zamir.me)
+		  //         input by: travc
+		  //         input by: Brett Zamir (http://brett-zamir.me)
+		  //         input by: Michael Grier
+		  //         input by: Ratheous
+		  //      bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+		  //      bugfixed by: Brett Zamir (http://brett-zamir.me)
+		  //      bugfixed by: Joris
+		  // reimplemented by: Brett Zamir (http://brett-zamir.me)
+		  // reimplemented by: Brett Zamir (http://brett-zamir.me)
+		  //             note: This reflects PHP 5.3/6.0+ behavior
+		  //             note: Please be aware that this function expects to encode into UTF-8 encoded strings, as found on
+		  //             note: pages served as UTF-8
+		  //        example 1: rawurlencode('Kevin van Zonneveld!');
+		  //        returns 1: 'Kevin%20van%20Zonneveld%21'
+		  //        example 2: rawurlencode('http://kevin.vanzonneveld.net/');
+		  //        returns 2: 'http%3A%2F%2Fkevin.vanzonneveld.net%2F'
+		  //        example 3: rawurlencode('http://www.google.nl/search?q=php.js&ie=utf-8&oe=utf-8&aq=t&rls=com.ubuntu:en-US:unofficial&client=firefox-a');
+		  //        returns 3: 'http%3A%2F%2Fwww.google.nl%2Fsearch%3Fq%3Dphp.js%26ie%3Dutf-8%26oe%3Dutf-8%26aq%3Dt%26rls%3Dcom.ubuntu%3Aen-US%3Aunofficial%26client%3Dfirefox-a'
+		
+		  str = (str + '')
+		    .toString()
+		
+		  // Tilde should be allowed unescaped in future versions of PHP (as reflected below), but if you want to reflect current
+		  // PHP behavior, you would need to add ".replace(/~/g, '%7E');" to the following.
+		  return encodeURIComponent(str)
+		    .replace(/!/g, '%21')
+		    .replace(/'/g, '%27')
+		    .replace(/\(/g, '%28')
+		    .
+		  replace(/\)/g, '%29')
+		    .replace(/\*/g, '%2A')		
+		
+	}
+	
+})(jQuery);
+actionFlag = false;
+actionFlag_timer = 300;	
+function actionFlagUp(){actionFlag = true; setTimeout(function(){ actionFlag = false;}, actionFlag_timer);}
+
+$(document).ready(function(){
+	fixUI();
+
+	var secureUrl = $("meta[property=':secureUrl']").attr("content");
+	/*
+	$(".openLoginBox").bind('touchstart click', function(){
+	  if (!flag) { flag = true;
+		    setTimeout(function(){ flag = false; }, flag_timer);	
+
+			var loginUrl = secureUrl + "/member";
+
+	         var left = (screen.width/2)-(400/2);
+	         var top = (screen.height/2)-(550/2);
+	        popupChildWindow = window.open(loginUrl, 'popup', 'status=1, resizable=0, width=400, height=550 top=' + top +', left='+ left +' ');
+		
+	        popupTimer = setInterval('popupPolling()', 1000);
+		}
+	});
+	*/
+
+	
+	$("#btn_fastWrite").bind('touchstart click', function(){if (!actionFlag) {actionFlagUp();	
+		$("#fastWriterModal").modal('show');
+	}});		
+	
+
+	
+	$("#btnLeft").bind('touchstart click', function(){if (!actionFlag) {actionFlagUp();
+
+			$( "#leftSidebar" ).animate({
+			    'left': "0px",
+			  },260);
+		  
+			$("#dismiss").toggleClass("leftToggled");		  
+			$("#dismiss").fadeIn(250);
+			$("#uiBlock").fadeIn(250);
+		}});
+
+	/***** Open Search Bar *****/
+	$("#btnRight").bind('touchstart click', function(){if (!actionFlag) {actionFlagUp();
+
+			$("#headerSearchBox").css('display','block');
+			$("#dismiss").toggleClass("searchBarToggled");
+			$("#dismiss").fadeIn(250);			
+			$("#uiBlock").fadeIn(250);
+		}});
+	
+	$("#btn_search").bind('touchstart click', function(){
+		if (!actionFlag) {actionFlagUp();
+
+			$("#headerSearchBox").css('display','block');
+			$("#dismiss").toggleClass("searchBarToggled");
+			$("#dismiss").fadeIn(250);			
+			$("#uiBlock").fadeIn(250);
+		}
+	});
+	
+	
+	/***** Go Search *****/
+	$("#btn_goSearch").bind('touchstart click', function(){
+		if (!actionFlag) {actionFlagUp();
+	  		var searchText = $("#input-search").val();
+	  		if(searchText != ""){
+		  		window.location.href = '/search/' + searchText;	
+	  		}else{
+		  		alert('Please insert search key.');
+	  		}
+	  		
+	  		
+		}
+	});
+	
+	$("#input-search").keypress(function( event ) {
+	  if ( event.which == 13 ) {
+	    $("#btn_goSearch").click();
+	  }
+	
+	});
+	
+	$("#dismiss").bind('touchstart click', function(){if (!actionFlag) {actionFlagUp();
+		dismiss();
+
+	}});
+
+	$(".chEdition").bind('touchstart click', function(){if (!actionFlag) {actionFlagUp();
+		$("#changeEditionModal").modal('show');
+		dismiss();
+		$("#changeEditionModal").on('hidden.bs.modal', function () {
+			fixUI();
+		});		
+	}});	
+	/*
+	$(".btn_menuBox").bind('touchstart click', function(){
+		if (!actionFlag) {actionFlagUp();
+	  		
+	  		var menu_id = this.id.replace('btn_menuBox_','');
+	  		
+	  		$(".btn_menuBox").css("background-color","");
+	  		$(".btn_menuBox").css("color","");
+	  			  		
+	  		$(this).css('background-color','#e0e0e0');		 		  		
+	  		$(this).css('color','#1a1a1a');  		  			  		
+	  			  		
+	  		$(".parentMenuBox").slideUp(200);
+	  		$(".childrenNavi").slideUp(200);	  		
+	  		$("#parentMenuBox_" + menu_id).slideDown(200);
+		}		
+		
+	});
+	*/
+	$("#leftSidebar .parentNavi a").bind('touchstart click', function(e){if (!actionFlag) {actionFlagUp();
+		
+	  		var target = $(this).attr("data-child-menu");
+	  		var targetState = $("#child_" + target).css('display');
+
+	  		if(targetState == "block"){
+		  		$(this).css('color','');		  		
+		  		$("#child_" + target).slideUp(250);
+	  		}else{
+		  		$("#leftSidebar .parentNavi").css('color','');		 		  		
+		  		$(this).css('color','#0073aa');  		
+		  		$(".childNavi").slideUp(50);		
+		  		$("#child_" + target).slideDown(250);		  		
+	  		}
+
+		}		
+		
+	});
+
+
+	$("#leftSidebar .childNavi a").bind('touchstart click', function(){
+		event.preventDefault();			
+		if (!actionFlag) {actionFlagUp();		
+			var target = $(this).attr('href');
+			window.location = target;
+		}
+	});
+
+	$("#header_wrapper").bind('mouseleave',function(){
+		$(".childrenNavi").slideUp(200);
+		$(".parentMenuBox").slideUp(200);	
+  		//$(".btn_menuBox").css("background-color","");
+  		//$(".btn_menuBox").css("color","");			
+	});
+
+	$("#menuBox .parentNavi").bind('touchstart click', function(){
+		if (!actionFlag) {actionFlagUp();
+	  		
+	  		var target = $(this).attr("data-child-menu");
+	  		
+	  		var targetState = $("#child_" + target).css('display');
+	  		if(targetState == "block"){
+		  		$("#child_" + target).slideUp(100);
+	  		}else{
+		  		$(".childNavi").slideUp(100);		  		
+		  		$("#child_" + target).delay(100).slideDown(200);		  		
+	  		}
+
+		}		
+		
+	}).mouseenter(function(){
+		console.log("test");
+		$("#menuBox .parentNavi").css('color','');
+		$("#menuBox .parentNavi").css('background-color','');		
+		
+		//$(this).css('color','#eaeaea');
+		//$(this).css('background-color','#212a34');
+		var target = $(this).attr('data-child-menu');
+		console.log(target);
+		$(".childrenNavi").slideUp(200);		
+		$("#menuBox #childrendMenuBox_" + target).slideDown(200);
+				
+	});
+	
+	$(".openContentModal").bind('touchstart click', function(){ if (!actionFlag) {actionFlagUp();
+		var type = $(this).attr('data-content-type');
+		switch(type){
+			case "page":
+				$("#contentModal .infoBox").hide();
+				$("#contentModal .contentBox").css("width","100%");
+				$("#contentModal .contentBox").css("border","0px");
+				History.pushState('','' ,"https://www.tutorialbook.club/");		
+			break;
+			
+			case "post":
+				$("#contentModal .contentBox").css("width","");				
+				$("#contentModal .infoBox").show();
+				
+			break;
+			
+		}
+		
+		$("#contentModal").modal('show');
+		
+		$("#contentModal").on('hidden.bs.modal', function () {
+			//History.back();
+			/*
+			$("#comment .loading").show();
+			var service_url = window.location.href;
+			$(".fb-comments").attr("data-href",service_url);
+			FB.XFBML.parse(document, function(){
+				$("#comment .loading").hide();
+			});
+			*/			
+		});		
+		
+	}});
+	
+	$(".chLang").bind('touchstart click', function(){if (!actionFlag) {actionFlagUp();		
+		var lang = $(this).attr('data-lang');
+		var token  = getToken();
+						
+		var data = {_csrf:token, lang:lang}
+		
+		$.ajax({
+	        url: '/util/chlang',
+	        data: data,
+	        type: 'POST',
+	        dataType: 'JSON',
+	        success: function(result){
+				if(result['code'] == 100){
+					location.reload();
+				}else{
+					alert("Sorry Something wrong.");
+				}
+	        },//Success
+			error: function(request,status,error){
+				alert("Sorry Something wrong.");
+			}	
+		});		
+	}});// END $('.chLang')	
+	
+}); // END READY
+
+$(window).resize(function(){
+
+	fixUI();
+
+});
+
+$(window).scroll(function(){
+	/*
+	var currPos = $(this).scrollTop();
+	var headerPos = $("#header .wide").position().top;
+	var headerHeight = $("#header .wide").height();
+	var headerBottom = headerPos + headerHeight;
+	var windowWidth = $(window).width();
+
+	if(windowWidth > 795){
+		if(currPos > headerBottom){
+			$("#header .wide").css("display",'');
+			$("#header .narrow").fadeIn(300)
+		}else{
+			//$("#header_wide").css("display",'block');	
+			$("#header .wide").fadeIn(300);							
+			$("#header .narrow").css("display",'');			
+		}			
+	}else{
+			$("#header .wide").css("display",'');				
+			$("#header .narrow").css("display",'');					
+	}		
+	*/
+});
+
+function dismiss(){
+	$( "#leftSidebar" ).animate({
+	    'left': "-260px",
+	  },260);
+	$("#headerSearchBox").css('display','');			  
+	$("#dismiss").removeClass("leftToggled");		
+	$("#dismiss").removeClass("searchBarToggled");	  
+	$("#dismiss").fadeOut(250);
+	$("#uiBlock").fadeOut(250);
+}
+
+function fixUI(){
+	var windowWidth = $(window).width();
+	var leftPx = "260px";
+	var responsive_lv1 = 852;
+	var responsive_lv2 = 1202;
+	if(windowWidth < responsive_lv1){
+			$("#header_wide").css("display",'');				
+			$("#header_narrow").css("display",'');					
+	}
+
+}
+
+function getToken(){
+	return $("meta[property='token']").attr("content");
+}
+
+function getLang(){
+	return $("meta[property='userlang']").attr("content");		
+}
+
+function getMediaUrl(){
+	return $("meta[property='mediaUrl']").attr("content");
+}
+
+function ChangeUrl(page, url) {
+    if (typeof (history.pushState) != "undefined") {
+        var obj = { Page: page, Url: url };
+        history.pushState(obj, obj.Page, obj.Url);
+    } else {
+        console.log("Browser does not support HTML5.");
+    }
+}
+
+function fixWideSearchBar(){
+	/*
+	console.log($("#memberBox").outerWidth());
+	var exceptWidth = $("#logoBox").outerWidth() + $("#header_wide_leftBox").outerWidth() + $("#header_wide_rightBox").outerWidth()+ 10;
+	var searchBarWidth = $(window).width() - exceptWidth;
+	$("#wide_searchBox").width(searchBarWidth);	
+	*/
+}
+
+
+function toggleSearchBar(){
+	
+}
+
+function toggleLeftSideBar(){
+	
+}
+
+function popupPolling() {
+    if(popupChildWindow && popupChildWindow.closed) {
+        // The popup has been closed, stop the timer and reload window.
+        clearInterval(popupTimer);
+        location.reload();
+    }
+}
+//# sourceMappingURL=common.js.map

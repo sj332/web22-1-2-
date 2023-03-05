@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script>
+   var photo=new Array();
+   for (i=1;i<=10;i++){
+    photo[i]=new Image();
+	photo[i].src="bbang.jpg";
+   }
+   var num=1;
+   function nextImg(){
+    if(num<10) num++;
+	else num=1;
+	document.getElementById("photo").src=photo[num].src;
+   }
+  </script>
+ </head>
+ <body>
+  <h1>Hello!</h1>
+  <img src="bbang.jpg" width="300"
+  height="462" id="photo"><br>
+   <imput type="button" value="next" onclick="nextImg()">
+ </body>
+</html>

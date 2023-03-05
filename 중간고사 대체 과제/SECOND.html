@@ -1,0 +1,177 @@
+<! DOCTYPE html>
+<html>
+ <head>
+  <meta author="2214347 이세진">
+  <title>웹프로그래밍첫걸음_2214347이세진_중간대체과제_보고서</title>
+ </head>
+<body bgcolor="whitesmoke">
+<br>
+<h1 align="center" style="font-family:serif;" style="font-size:40px;"> 웹프로그래밍 보고서</h1>
+<br>
+<hr width="800">
+<p> 
+<a id="up"></a>
+<pre>
+<!-중간고사 대체과제
+
+주석, 하이퍼링크
+지금까지 배운 HTML5 태그를 사용하여 정리한 보고서를 웹문서 형식으로 제출할 것!
+
+(다양한 태그를 많이 사용하는 것이 점수 높음. 성실도 평가가 주안점)-->
+
+
+</pre>
+
+
+<header>
+<nav align="center" style="font-family:serif;">
+<p><h3>&nbsp;&nbsp;&lt;목차,좌표 연결&gt;</h3></p>
+<br>
+<p><a href="FIRST.html">&nbsp;&nbsp;1장&nbsp;&nbsp;인터넷과 웹 환경</a></p>
+
+<p><a href="SECOND.html">&nbsp;&nbsp;2장&nbsp;&nbsp;HTML5 문서 기본 이해하기</a></p>
+
+<p><a href="THIRD.html">&nbsp;&nbsp;3장&nbsp;&nbsp;문서 구조 표현하기</a></p>
+
+<p><a href="FOURTH.html">&nbsp;&nbsp;4장&nbsp;&nbsp;링크와 멀티미디어 표현하기</a></p>
+
+<p><a href="FIFTH.html">&nbsp;&nbsp;5장&nbsp;&nbsp;폼 활용하기</a></p>
+</nav></header>
+
+
+
+<br><br><br>
+<aside align="right">
+<a href="index.html">
+<input type="button" value="처음 화면으로 돌아가기"
+style="font-family:serif;"></a>
+</aside>
+<hr width="800">
+
+<br>
+<article>
+<section style="font-family:serif;">
+<h2 align="center"style="font-family:serif;">
+2장 HTML5 문서 기본 이해하기</h2>
+<br><br>
+<ul>
+<li>주석</li>
+<p>주석은 웹 브라우저에서는 보이지 않으나 문서에 대한 정보를 남기기 위해서 사용</p>
+예시: &lt;!– 주석내용 --&gt;
+
+<br><br>
+<li>특수문자 사용</li>
+<br>
+<ol><li>&특수문자 이름;<br> 
+<br>
+<table border="1">
+<caption>특수문자</caption>
+<thead><tr><th>특수문자</th><th>사용 방법</th></tr></thead>
+<tbody><tr align="center"><td >공백문자</td><td>&amp;nbsp;</td></tr>
+<tr align="center"><td>&lt;</td><td>&amp;lt;</td></tr>
+<tr align="center"><td>&gt;</td><td>&amp;gt;</td></tr>
+<tr align="center"><td>&quot;</td><td>&amp;quot;</td></tr>
+<tr align="center"><td>&amp;</td><td>&amp;amp;</td></tr>
+<tr align="center"><td>&copy;</td><td>&amp;copy;</td></tr>
+</tbody></table>
+</li>
+<br>
+<li>&#문자코드;</li>
+</ol>
+
+<br><br>
+<li>폰트 효과</li>
+<table border="1" >
+<caption>폰트 태그</caption>
+<thead>
+<tr><th>태그</td><th>태그의 효과</th></tr>
+</thead>
+<tbody>
+<tr><td align="center">
+텍스트 강조(Emphasis): &lt;em&gt; 요소</td><td align="center">
+<em>기울여 표시</em></td></tr>
+<tr><td align="center">
+강한 강조(Strong Emphasis): &lt;strong&gt; 요소</td>
+<td align="center"><strong>진하게 표시</strong></td></tr>
+<tr><td align="center">
+작은(Small) 글자: &lt;small&gt; 요소</td><td align="center"><small>약간 작은 글씨로 표시</small></td></tr>
+<tr><td align="center">
+하이라이트 효과: &lt;mark&gt; 요소</td><td align="center"><mark>텍스트를 눈에 띄도록 마킹하고자 할 때, 형광펜 표시</mark></td></tr>
+<tr><td align="center">
+첨자(Subscript & Superscript): &lt;sub&gt;, &lt;sup&gt;</td><td align="center"><sub>첨자</sub>,<sup>첨자</sup></td></tr>
+</tbody></table>
+<br><br>
+<li>글 내용 요소</li>
+<table border="1" >
+<caption>글 내용 요소</caption>
+<thead><tr><th colspan="2">요소 이름</th><th>설명</th></tr></thead>
+<tbody>
+<tr ><td align="center">제목(Headline)</td><td align="center">&lt;hn&gt;요소</td>
+<td><ul><li>문서의 제목이나 머리글의 글자 크기(n=1~6)를 지정</li>
+<li>&lt;H1&gt;의 값이 가장 큰 글씨체를 나타내며, &lt;H6&gt;의 값이 가장 작은 글씨체</li></ul></td></tr>
+
+<tr><td align="center">단락(Paragraph)</td><td align="center">&lt;p&gt;요소</td>
+<td><ul><li>절이나 단락을 구분하는 요소</li>
+<li>줄을 바꿈과 동시에 한 줄 띄 되는 효과로 &lt;p&gt;요소 앞뒤에 약간의 여백이 자동으로 추가됨</li></ul></td></tr>
+
+<tr><td align="center">줄 바꿈(Line Break)</td><td align="center">&lt;br&gt;요소</td>
+<td><ul><li>줄과 줄 사이에 줄 바꿈을 하기 위해 사용</li>
+<li>연속해서 사용하면 여러 줄의 빈 줄 삽입이 가능함</li></ul></td></tr>
+
+<tr><td align="center">가로줄(Horizontal Line)</td><td align="center">&lt;hr&gt;요소</td>
+<td><ul><li>문단 간 혹은 내용 사이에 구분을 확실히 하고자 할 때</li>
+<li>단독태그로 사용됨</li>
+<li>아무 속성도 사용하지 않으면 기본적으로 선의 길이가 화면 크기에 맞추어 나오게 되고, 음각된 선이 그어짐</li></ul></td></tr>
+
+<tr><td align="center">작성된 형식 유지(Pre- formatted Text)</td><td align="center">&lt;pre&gt;요소</td>
+<td><ul><li>화면에 입력한 상태 그대로 보이고자 할 때</li>
+<li>공백문자(whitespace character): 빈칸, 탭, 줄 바꿈</li></ul></td></tr>
+
+<tr><td align="center" >단락 인용(Block Quotation): 빈칸, 탭, 줄 바꿈</td><td align="center">&lt;blockquote&gt;요소</td>
+<td><ul><li>다른 글의 내용을 단락 단위로 인용하여 포함시킬 때</li>
+<li>들여쓰기로 구분하여 표시</li></ul></td></tr>
+</tbody>
+</table>
+<br><br>
+<li>목록</li>
+<table border="1">
+<caption>목록 요소</caption>
+<thead>
+<tr><th colspan="2">요소 이름</th><td>설명</td></tr>
+</thead>
+<tbody>
+<tr><td align="center">순서 없는 목록(Unordered List)</td>
+<td align="center">&lt;ul&gt;요소</td>
+<td><ul><li>순서가 없는 목록을 적을 때 사용</li>
+<li>나열된 항목(list item)에는 하위 요소인 &lt;li&gt; 를 사용</li>
+</ul></td></tr>
+
+<tr><td align="center">순서 있는 목록(Ordered List)</td>
+<td align="center">&lt;ol&gt;요소</td>
+<td><ul><li>순서가 있는 목록을 적을 때 사용</li>
+<li>나열된 항목(list item)에는 하위 요소인 &lt;li&gt; 를 사용</li>
+</ul></td></tr>
+
+<tr><td align="center">정의 목록 (Description List/Definition List)</td>
+<td align="center">&lt;dl&gt;요소</td>
+<td><ul><li>사전과 같이 용어나 단어를 설명하는 목록을 만들때</li>
+<li>용어(term)는 &lt;dt&gt; 요소, 설명(description)은 &lt;dd&gt; 요소</li>
+</ul></td></tr>
+</tbody>
+</table>
+<br><br><br>
+
+</section>
+</article>
+<aside>
+<a href="#up"><input type="button" value="맨위로" 
+style="font-family:serif;"></a>
+&nbsp;
+</aside>
+<footer>
+<pre align="center"style="font-family:serif;">
+&copy;2214347 이세진&amp; 숙명여자대학교 웹프로그래밍 첫걸음
+</pre>
+</footer>
+</body>
+</html>

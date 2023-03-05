@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<body>
+<br><br><br>
+<aside align="center"> 
+<audio controls src="BGM.mp3" autoplay=None loop="3"></audio>
+</aside>
+<h1 style="font-family:serif;" align="center">Review</h1>
+<hr width="800">
+<br><br>
+<section align="center" style="font-family:serif;">
+<form>
+
+
+<fieldset name="info">
+<legend>Infomation</legend>
+성별
+<br>
+<label for="male">남성</label>
+<input type="radio" name="sex" id="male" value="male">
+<label for="female">여성</label>
+<input type="radio" name="sex" id="female" value="female">
+
+<br><br>
+아이디<br>
+<input type="text" name="nick"
+value="id" size="15" 
+style="font-family:serif;">
+<br><br>
+비밀번호
+<br>
+<input type="password" value="password" size="27">
+<br><br>
+이메일
+<br>
+<input type="email" value="english@english"
+style="font-family:serif;">
+<br>
+</fieldset>
+<br>
+<br><fieldset name="review">
+<legend>Review</legend>
+
+
+<label for="score">점수</label>
+<br>
+<select name="score" size="1">
+<option value="1"selected>
+&starf;&star;&star;&star;&star;</option>
+<option value="2" selected>
+&starf;&starf;&star;&star;&star;</option>
+<option value="3" selected>
+&starf;&starf;&starf;&star;&star;</option>
+<option value="4" selected>
+&starf;&starf;&starf;&starf;&star;</option>
+<option value="5" selected>
+&starf;&starf;&starf;&starf;&starf;</option>
+</select>
+
+<br><br>
+<label for="review">평가</label><br>
+<textarea name="review" cols="30" rows="7"
+style="font-family:serif;">전달하실 내용을 적으세요
+</textarea>
+<br>
+<br>
+첨부 파일
+<br>
+<input type="file" name="myfile"
+style="font-family:serif;">
+</fieldset>
+<br>
+
+등록
+<button type="submit"
+style="font-family:serif;">Submit</button>
+
+초기화
+<button type="reset" 
+style="font-family:serif;">Reset</button>
+
+</form>
+</section align="center:>
+</body>
+</html>

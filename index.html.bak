@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta name="index.html">
+ </head>
+ <body>
+  <br><br>
+  <h1 align="center">WebClass.ME</h1>
+  <hr width="1000"><br><br>
+  <table align="center"><tr>
+  <td>
+   <figure>
+    <img src="C:\Users\user\Desktop\웹프첫걸음 순헌관408\dog1.jpg" alt="강아지 소개" height ="255">
+	<figcaption><strong>굴굴이<br> 남자:5개월</strong></figcaption>
+   </figure>
+  </td>
+  <td>
+  <a href="page.html">
+   <figure>   
+    <img src="C:\Users\user\Desktop\웹프첫걸음 순헌관408\dog2.jpg" alt="강아지 소개" height ="255"></a>
+	<figcaption><strong>검댕이<br> 남자:3개월</strong></figcaption>
+   </figure>
+  </td></tr></table>
+  <br><br><br>
+  <hr width="1000">
+  <p align="center">Copyright&copy;WebClass.ME.All Rights Reserved.</p>
+ </body>
+</html>

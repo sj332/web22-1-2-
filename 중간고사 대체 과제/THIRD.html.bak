@@ -1,0 +1,131 @@
+<! DOCTYPE html>
+<html>
+ <head>
+  <meta author="2214347 이세진">
+  <title>웹프로그래밍첫걸음_2214347이세진_중간대체과제_보고서</title>
+ </head>
+<body bgcolor="whitesmoke">
+<br>
+<h1 align="center" style="font-family:serif;" style="font-size:40px;"> 웹프로그래밍 보고서</h1>
+<br>
+<hr width="800">
+<p> 
+<a id="up"></a>
+<pre>
+<!-중간고사 대체과제
+
+주석, 하이퍼링크
+지금까지 배운 HTML5 태그를 사용하여 정리한 보고서를 웹문서 형식으로 제출할 것!
+
+(다양한 태그를 많이 사용하는 것이 점수 높음. 성실도 평가가 주안점)-->
+</pre>
+
+
+<header>
+<nav align="center" style="font-family:serif;">
+<p><h3>&nbsp;&nbsp;&lt;목차,좌표 연결&gt;</h3></p>
+<br>
+<p><a href="FIRST.html" >&nbsp;&nbsp;1장&nbsp;&nbsp;인터넷과 웹 환경</a></p>
+
+<p><a href="SECOND.html" >&nbsp;&nbsp;2장&nbsp;&nbsp;HTML5 문서 기본 이해하기</a></p>
+
+<p><a href="THIRD.html" >&nbsp;&nbsp;3장&nbsp;&nbsp;문서 구조 표현하기</a></p>
+
+<p><a href="FOURTH.html" >&nbsp;&nbsp;4장&nbsp;&nbsp;링크와 멀티미디어 표현하기</a></p>
+
+<p><a href="FIFTH.html" >&nbsp;&nbsp;5장&nbsp;&nbsp;폼 활용하기</a></p>
+</nav></header>
+
+
+
+<br><br><br>
+<aside align="right">
+<a href="index.html">
+<input type="button" 
+value="처음 화면으로 돌아가기"
+style="font-family:serif;"></a>
+</aside>
+<hr width="800">
+<article>
+<section style="font-family:serif;">
+
+
+
+<br>
+<h2 align="center"style="font-family:serif;">
+3장 문서 구조 표현하기</h2>
+테이블
+<table border="1">
+<caption>&lt;table&gt;요소</caption>
+<tr><td>&lt;table&gt;</td><td><ul>
+<li>표를 만들어 주는 태그로 단순히 표를 만들 목적 이외에도 문장이나
+이미지를 적절히 배치하기 위해서도 많이 쓰임</li>
+<li>행(row) => 열(column) 만큼 셀(cell)</li>
+<li>테이블의 구성 요소: &lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;</li>
+</ul></td>
+<td><table border="1">
+<tr><td>&lt;tr&gt;</td><td>테이블 안에서 하나의 행(row)</td></tr>
+<tr><td>&lt;th&gt;</td><td>테이블의 머리글을 쓸 때 사용. 굵은 글씨체로 가운데 정렬이 기본값</td></tr>
+<tr><td>&lt;td&gt;</td><td>각 셀의 데이터를 쓸 때 사용, 왼쪽 정렬이 기본값</td></tr>
+</table></td></tr>
+</table>
+
+<br><br>
+셀 합치기
+<table>
+<tr><td>rowspan, colspan 속성</td>
+<td><ul>
+<li>&lt;td&gt; 요소의 rowspan 속성과 colspan 속성을 사용</li>
+<li>rowspan 속성: 위아래 줄(rows)의 셀 병합</li>
+<li>colspan 속성: 옆 칸(column)의 셀 병합</li>
+</ul></td>
+</tr></table>
+<br><br>
+표 본문 요소 
+<dl>
+<dt> 표의 제목 - &lt;caption&gt;요소</dt>
+<dd>표의 머리줄, 몸체, 꼬리줄 표현</dd>
+<dd>몸체만 스크롤하는 것이 가능</dd>
+<dd>&lt;tbody&gt; 여러 번 사용할 수 있음</dd>
+<image src="caption.png" alt="표 본문 요소 이미지"></dl>
+
+<br><br>
+글 본문 요소
+<table border="1">
+<caption>글 본문 요소</caption>
+<thead><tr><th colspan="2">요소 이름
+</th><th>설명</th></tr></thead>
+
+<tbody><tr align="center"><td align="center">머리말</td><td>&lt;header&gt; 요소</td><td>머리말 영역으로 웹의 문서의 제목, 소개 등 문서 관련 설명을
+표기하는 요소를 포함</td></tr>
+
+<tr align="center"><td align="center">탐색 메뉴</td><td>&lt;nav&gt; 요소</td><td>다른 웹 문서나 문서 내의 이동을 위한 내비게이션 링크를
+표현할 때 사용</td></tr>
+
+<tr align="center"><td align="center">독립된 본문</td><td>&lt;article&gt; 요소</td><td>웹 문서에서 주요 내용을 가진 독립적인 본문을 나타낼 때 사용</td></tr>
+
+<tr align="center"><td align="center">문서내 섹션 그룹</td><td>&lt;section&gt; 요소</td><td>웹 문서 내에서 절 단위로 구분하거나 의미가 비슷한 그룹으로
+문서를 구분하여 묶기 위해서 사용</td></tr>
+
+<tr align="center"><td align="center">부수 정보</td><td>&lt;aside&gt; 요소</td><td>본문의 내용과 구별되는 별개의 정보를 표현하기 위하여 사용
+예) 블로그에서 최신 댓글목록이나 토막상식, 배너 및 광고 등</td></tr>
+
+<tr align="center"><td align="center">꼬리말</td><td>&lt;footer&gt; 요소</td><td>웹 문서의 꼬리말에 해당하는 저자정보, 저작권 정보, 이용조건, 
+관련 링크 들을 나타내기 위해 사용</td></tr>
+</tbody>
+</table>
+<br><br><br>
+</section>
+</article>
+<aside>
+<a href="#up"><input type="button" value="맨위로"
+style="font-family:serif;"></a>
+&nbsp;
+</aside>
+<footer>
+<pre align="center"
+style="font-family:serif;">&copy;2214347 이세진&amp; 숙명여자대학교 웹프로그래밍 첫걸음
+</pre>
+</footer>
+</body>
+</html>

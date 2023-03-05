@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  a:hover{color:black; text-decoration:none;}
+  a{color:lightgray; text-decoration:none;}
+  a:link{color:lightgray; text-decoration:none;} 
+  a:visited{color:lightgray; text-decoration:none;} 
+  img{border-radius:1%;}
+  
+      * {margin:0;padding:0}
+    li {list-style:none;}
+	#gallery{
+        width:700px;margin:30px auto; 
+        border:1px solid #999;
+        box-shadow:0 5px 5px rgba(0,0,0,0.3);
+}
+    #gallery h1 {text-align:center;}
+    #gallery img {border:1px solid #666; }
+    #photo {text-align:center;}
+    #photo_list ul { width:900px; margin:0 auto; overflow:hidden;}
+    #photo_list ul li {width:100px; float:left; text-align:center;}
+    #photo_list {width:300px; margin:10px auto; overflow:hidden;}
+    .btn_wrap {text-align:center;}
+    .btn_wrap a {font-weight:bold;}
+	#intt{
+    width:70%; 
+    margin-left:15%; 
+    margin-right:15%;
+}
+
+    #intt{
+    border-collapse : collapse;
+    border : 1px solid black;}
+	
+    #aa{
+    border-collapse : collapse;
+    border : 1px solid black;
+	}
+	
+	#aaa{
+    border-collapse : collapse;
+    border : 1px solid black;
+	}
+	
+	#bbb{
+    border-collapse : collapse;
+    border : 1px solid black;
+	}
+	
+	#ccc{
+    border-collapse : collapse;
+    border : 1px solid black;
+	}
+	
+	#ddd{
+    border-collapse : collapse;
+    border : 1px solid black;
+	}
+</style>
+<link rel='stylesheet' href='main.css'>
+<script>
+  window.onload = function() {
+    //[1] 포토 목록에 작은 이미지를 클릭했을때 큰이미지로 변경
+
+    //클릭이벤트를 등록하기 위해 포토 목록에 9개의 <a>요소를 모두 선택
+    var list_zone = document.getElementById("inner_list");
+    var list_a = list_zone.getElementsByTagName("a");
+
+    //포토 리스트의 모든 <a>에 클릭 이벤트를 등록하기 위해서 반복문을 이용하여 등록
+    for(var i=0; i<list_a.length; i++) {
+        list_a[i].onclick=function(){
+            var ph=document.getElementById("photo").children[0];
+            ph.src = this.href;
+            return false; //<a>요소를 클릭했을때 링크가 되지 않도록 함.
+        }
+    }
+
+    //[2] 이전, 다음 버튼을 클릭 할때마다 <ul>이 100px만큼 증가 또는 감소되어
+    //    좌,우측으로 이동
+
+    var n_btn = document.getElementById("btn_next");
+    var m_num = 0;
+    n_btn.onclick = function() {
+        if(m_num>=list_a.length-3) return false;
+        m_num++;
+        list_zone.style.marginLeft=-100*m_num+"px";
+        
+        return false;
+    }
+
+    var b_btn = document.getElementById("btn_before");
+    b_btn.onclick=function() {
+        if(m_num<=0) return false;
+        m_num--;
+        list_zone.style.marginLeft = -100*m_num+"px";
+    }
+
+  }
+</script>
+</head>
+<body>
+<div id="start">
+<h2><table id="list"> <tr align="center">
+<td id="title"><a href="index.html">
+<img src="ggd.jpg" alt="타이틀이미지" width="50"></a></td>
+<td><a href="daejeon.html"><span>대전이란?</span></a></td>
+<td><a href="district.html"><span>지역 추천</span></a></td>
+<td><a href="todo1.html"><span>맛집 추천</span></a></td>
+<td><a href="todo2.html"><span>To Do 리스트</span></a></td>
+<td><a href="festival.html"><span>축제</span></a></td>
+</tr></div></table></h2>
+<hr>
+
+<div id="gallery">
+     <br><br>
+     <p id="photo">
+        <img src="images1.jpg" width="500" height="320"alt="/">
+     </p>
+     <div id="photo_list">
+        <ul id="inner_list">
+            <li>
+                <a href="images1.jpg"><img src="images1.jpg" alt="사진1" 
+				width="500" height="250"></a>
+            </li>
+            <li>
+                <a href="images2.jpg"><img src="images2.jpg" alt="사진2" 
+				width="500" height="250"></a>
+            </li>
+            <li>
+                <a href="images3.jpg"><img src="images3.jpg" alt="사진3" 
+				width="500" height="250"></a>
+            </li>
+			<li>
+                <a href="images4.jpg"><img src="images4.jpg" alt="사진4" 
+				width="500" height="250"></a>
+            </li>        
+            <li>
+                <a href="images5.jpg"><img src="images5.jpg" alt="사진5" 
+				width="500" height="250"></a>
+            </li>
+            <li>
+                <a href="images6.jpg"><img src="images6.jpg" alt="사진6" 
+				width="500" height="250"></a>
+            </li>
+            <li>
+                <a href="images7.jpg"><img src="images7.jpg" alt="사진7" 
+				width="500" height="250"></a>
+            </li>
+            <li>
+                <a href="images8.jpg"><img src="images8.jpg" alt="사진8" 
+				width="500" height="250"></a>
+            </li>
+            <li>
+                <a href="images9.jpg"><img src="images9.jpg" alt="사진9" 
+				width="500" height="250"></a>
+            </li>
+        </ul>
+     </div>
+     <p class="btn_wrap">
+        <a href="#" id="btn_before">◀</a>
+        <a href="#" id="btn_next">▶</a>
+     </p>
+ </div>
+ 
+ <br><br>
+ <table id="intt">
+ <tr align="center" id="aa">
+ <td id="aaa"><br>기획 의도<br><a href="plan.html">자세히 보기<br></a></td>
+ <td id="bbb"><br>주제<br><a href="topic.html">자세히 보기</a><br></td>
+ <td id="ccc"><br>레이아웃 구성<br><a href="layout.html">자세히 보기</a><br></td>
+ <td id="ddd"><br>느낀점<br><a href="real.html">자세히 보기</a><br></td>
+ </tr>
+
+ </table>
+ <br><br><br>
+<hr>
+<footer>
+<p align='center'>by 2214347 이세진 &copy; 숙명여자대학교 웹프로그래밍 첫걸음</p>
+</footer>
+</body>
+</html>

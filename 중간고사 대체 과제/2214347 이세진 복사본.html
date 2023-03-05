@@ -1,0 +1,538 @@
+<! DOCTYPE html>
+<html>
+ <head>
+  <meta author="2214347 이세진">
+  <title>웹프로그래밍첫걸음_2214347이세진_중간대체과제_보고서</title>
+ </head>
+<body bgcolor="whitesmoke">
+<br>
+<h1 align="center" style="font-family:serif;" style="font-size:40px;"> 웹프로그래밍 보고서</h1>
+<br>
+<hr width="800">
+<p> 
+<a id="up"></a>
+<pre>
+<!-중간고사 대체과제
+
+주석, 하이퍼링크
+지금까지 배운 HTML5 태그를 사용하여 정리한 보고서를 웹문서 형식으로 제출할 것!
+
+(다양한 태그를 많이 사용하는 것이 점수 높음. 성실도 평가가 주안점)-->
+</pre>
+<nav align="center">
+<p><h3>&nbsp;&nbsp;&lt;목차,좌표 연결&gt;</h3></p>
+<p><a href="FIRST.html" >&nbsp;&nbsp;1장&nbsp;&nbsp;인터넷과 웹 환경</a></p>
+
+<p><a href="SECOND.html" >&nbsp;&nbsp;2장&nbsp;&nbsp;HTML5 문서 기본 이해하기</a></p>
+
+<p><a href="THIRD.html" >&nbsp;&nbsp;3장&nbsp;&nbsp;인터넷과 웹 환경</a></p>
+
+<p><a href="FOURTH.html" >&nbsp;&nbsp;4장&nbsp;&nbsp;인터넷과 웹 환경</a></p>
+
+<p><a href="FIFTH.html" >&nbsp;&nbsp;5장&nbsp;&nbsp;인터넷과 웹 환경</a></p>
+</nav>
+<br><br><br>
+<aside align="right">
+<iframe src="https://youtu.be/f3m_WqxhL4o" width="400"></iframe>
+</aside>
+
+<article>
+<section>
+<p><a id="first">1장 인터넷과 웹 환경</a>
+
+<dl>
+<dt style="border:1px solid black;">&lt;!DOCTYPE html&gt;</dt>
+<dd><ul><li>HTML5 문서 규약으로 만들어진 웹 문서임을 표시</li></ul></dd>
+
+<dt style="border:1px solid black;">&lt;HTML&gt;</dt>
+<dd><ul><li>현재 파일이 HTML 문서라는 지시사항을 나타내는 태그</li>
+<li>HTML 문서의 처음과 끝에 나타나며 HTML 태그 사이에 HEAD와 BODY가
+들어 감</li></ul></dd>
+
+<dt style="border:1px solid black;">&lt;HEAD&gt;</dt>
+<dd><ul><li>HTML 문서에 대한 일반적인 정보를 표시하는 머리말 역할의 태그</li>
+<li>실제 브라우저 화 면에는 출력되지 않음</li>
+<li>&lt;TITLE&gt;, &lt;META&gt; 태그가 기술되는 부분</li></ul></dd>
+
+<dt style="border:1px solid black;">&lt;TITLE&gt;</dt>
+<dd><ul><li>현재 작성된 HTML 문서의 제목을 표기하는 태그</li>
+<li>이 제목은 브라우저의 제목 표시줄에 나타남</li></ul></dd>
+
+<dt style="border:1px solid black;">&lt;META&gt;</dt>
+<dd><ul><li>제작자, 저작도구, 주요 검색어, 인코딩 사항 등 홈페이지의 각종 정보를 입력</li>
+<li>로봇 배제 표준이나 변경 URL으로의 이동 등을 설정할 수 있음</li></ul></dd>
+
+<dt style="border:1px solid black;">&lt;BODY&gt;</dt>
+<dd><ul><li>HTML 문서의 본문을 작성하는 부분</li>
+<li>즉, 브라우저 화면에 보여지는 홈페이지가 기술되는 부분</li></ul></dd>
+
+</dl>
+</p><br><br>
+</section>
+
+
+
+
+
+
+
+
+
+<p><a id="second">2장 HTML5 문서 기본 이해하기</a>
+<br><br>
+주석
+<p>주석은 웹 브라우저에서는 보이지 않으나 문서에 대한 정보를 남기기 위해서 사용</p>
+예시: &lt;!– 주석내용 --&gt;
+
+<br><br>
+특수문자 사용
+<ol><li>&특수문자 이름;<br> <table border="1"><tr><th>특수문자</th><th>사용 방법</th></tr>
+<tr align="center"><td >공백문자</td><td>&amp;nbsp;</td></tr>
+<tr align="center"><td>&lt;</td><td>&amp;lt;</td></tr>
+<tr align="center"><td>&gt;</td><td>&amp;gt;</td></tr>
+<tr align="center"><td>&quot;</td><td>&amp;quot;</td></tr>
+<tr align="center"><td>&amp;</td><td>&amp;amp;</td></tr>
+<tr align="center"><td>&copy;</td><td>&amp;copy;</td></tr></table>
+</li>
+<li>&#문자코드;</li>
+</ol>
+
+<br>
+폰트 효과
+<table border="1" >
+<tr><th>태그</td><th>태그의 효과</th></tr>
+<tr><td align="center">텍스트 강조(Emphasis): &lt;em&gt; 요소</td><td align="center">기울여 표시</td></tr>
+<tr><td align="center">강한 강조(Strong Emphasis): &lt;strong&gt; 요소</td><td align="center"><em>진하게 표시</em></td></tr>
+<tr><td align="center">작은(Small) 글자: &lt;small&gt; 요소</td><td align="center"><small>약간 작은 글씨로 표시</small></td></tr>
+<tr><td align="center">하이라이트 효과: &lt;mark&gt; 요소</td><td align="center"><mark>텍스트를 눈에 띄도록 마킹하고자 할 때, 형광펜 표시</mark></td></tr>
+<tr><td align="center">첨자(Subscript & Superscript): &lt;sub&gt;, &lt;sup&gt;</td><td align="center"><sub>첨자</sub>,<sup>첨자</sup></td></tr>
+</table>
+<br>
+글 내용 요소
+<table border="1" >
+<tr><th colspan="2">요소 이름</th><th>설명</th></tr>
+<tr ><td align="center">제목(Headline)</td><td align="center">&lt;hn&gt;요소</td>
+<td><ul><li>문서의 제목이나 머리글의 글자 크기(n=1~6)를 지정</li>
+<li>&lt;H1&gt;의 값이 가장 큰 글씨체를 나타내며, &lt;H6&gt;의 값이 가장 작은 글씨체</li></ul></td></tr>
+
+<tr><td align="center">단락(Paragraph)</td><td align="center">&lt;p&gt;요소</td>
+<td><ul><li>절이나 단락을 구분하는 요소</li>
+<li>줄을 바꿈과 동시에 한 줄 띄 되는 효과로 &lt;p&gt;요소 앞뒤에 약간의 여백이 자동으로 추가됨</li></ul></td></tr>
+
+<tr><td align="center">줄 바꿈(Line Break)</td><td align="center">&lt;br&gt;요소</td>
+<td><ul><li>줄과 줄 사이에 줄 바꿈을 하기 위해 사용</li>
+<li>연속해서 사용하면 여러 줄의 빈 줄 삽입이 가능함</li></ul></td></tr>
+
+<tr><td align="center">가로줄(Horizontal Line)</td><td align="center">&lt;hr&gt;요소</td>
+<td><ul><li>문단 간 혹은 내용 사이에 구분을 확실히 하고자 할 때</li>
+<li>단독태그로 사용됨</li>
+<li>아무 속성도 사용하지 않으면 기본적으로 선의 길이가 화면 크기에 맞추어 나오게 되고, 음각된 선이 그어짐</li></ul></td></tr>
+
+<tr><td align="center">작성된 형식 유지(Pre- formatted Text)</td><td align="center">&lt;pre&gt;요소</td>
+<td><ul><li>화면에 입력한 상태 그대로 보이고자 할 때</li>
+<li>공백문자(whitespace character): 빈칸, 탭, 줄 바꿈</li></ul></td></tr>
+
+<tr><td align="center" >단락 인용(Block Quotation): 빈칸, 탭, 줄 바꿈</td><td align="center">&lt;blockquote&gt;요소</td>
+<td><ul><li>다른 글의 내용을 단락 단위로 인용하여 포함시킬 때</li>
+<li>들여쓰기로 구분하여 표시</li></ul></td></tr>
+
+</table>
+<br><br>
+목록
+<table border="1">
+<tr><th colspan="2">요소 이름</th><td>설명</td></tr>
+<tr><td align="center">순서 없는 목록(Unordered List)</td>
+<td align="center">&lt;ul&gt;요소</td>
+<td><ul><li>순서가 없는 목록을 적을 때 사용</li>
+<li>나열된 항목(list item)에는 하위 요소인 &lt;li&gt; 를 사용</li>
+</ul></td></tr>
+
+<tr><td align="center">순서 있는 목록(Ordered List)</td>
+<td align="center">&lt;ol&gt;요소</td>
+<td><ul><li>순서가 있는 목록을 적을 때 사용</li>
+<li>나열된 항목(list item)에는 하위 요소인 &lt;li&gt; 를 사용</li>
+</ul></td></tr>
+
+<tr><td align="center">정의 목록 (Description List/Definition List)</td>
+<td align="center">&lt;dl&gt;요소</td>
+<td><ul><li>사전과 같이 용어나 단어를 설명하는 목록을 만들때</li>
+<li>용어(term)는 &lt;dt&gt; 요소, 설명(description)은 &lt;dd&gt; 요소</li>
+</ul></td></tr>
+</table>
+
+
+
+
+
+
+
+<p><a id="third">3장 문서 구조 표현하기</a>
+<table border="1">
+테이블
+<tr><td>&lt;table&gt;</td><td><ul>
+<li>표를 만들어 주는 태그로 단순히 표를 만들 목적 이외에도 문장이나
+이미지를 적절히 배치하기 위해서도 많이 쓰임</li>
+<li>행(row) => 열(column) 만큼 셀(cell)</li>
+<li>테이블의 구성 요소: &lt;table&gt;, &lt;tr&gt;, &lt;th&gt;, &lt;td&gt;</li>
+</ul></td>
+<td><table border="1">
+<tr><td>&lt;tr&gt;</td><td>테이블 안에서 하나의 행(row)</td></tr>
+<tr><td>&lt;th&gt;</td><td>테이블의 머리글을 쓸 때 사용. 굵은 글씨체로 가운데 정렬이 기본값</td></tr>
+<tr><td>&lt;td&gt;</td><td>각 셀의 데이터를 쓸 때 사용, 왼쪽 정렬이 기본값</td></tr>
+</table></td></tr>
+</table>
+</p>
+<br><br>
+셀 합치기
+<table>
+<tr><td>rowspan, colspan 속성</td>
+<td><ul>
+<li>&lt;td&gt; 요소의 rowspan 속성과 colspan 속성을 사용</li>
+<li>rowspan 속성: 위아래 줄(rows)의 셀 병합</li>
+<li>colspan 속성: 옆 칸(column)의 셀 병합</li>
+</ul></td>
+<td><a href>예시 이동</a></td>
+</tr></table>
+<br><br>
+표 본문 요소 
+<dl>
+<dt> 표의 제목 - &lt;caption&gt;요소</dt>
+<dd>표의 머리줄, 몸체, 꼬리줄 표현</dd>
+<dd>몸체만 스크롤하는 것이 가능</dd>
+<dd>&lt;tbody&gt; 여러 번 사용할 수 있음</dd>
+<image src="caption.png" alt="표 본문 요소 이미지"></dl>
+
+<br><br>
+글 본문 요소
+<table border="1">
+<tr><th colspan="2">요소 이름</th><th>설명</th></tr>
+<tr align="center"><td align="center">머리말</td><td>&lt;header&gt; 요소</td><td>머리말 영역으로 웹의 문서의 제목, 소개 등 문서 관련 설명을
+표기하는 요소를 포함</td></tr>
+
+<tr align="center"><td align="center">탐색 메뉴</td><td>&lt;nav&gt; 요소</td><td>다른 웹 문서나 문서 내의 이동을 위한 내비게이션 링크를
+표현할 때 사용</td></tr>
+
+<tr align="center"><td align="center">독립된 본문</td><td>&lt;article&gt; 요소</td><td>웹 문서에서 주요 내용을 가진 독립적인 본문을 나타낼 때 사용</td></tr>
+
+<tr align="center"><td align="center">문서내 섹션 그룹</td><td>&lt;section&gt; 요소</td><td>웹 문서 내에서 절 단위로 구분하거나 의미가 비슷한 그룹으로
+문서를 구분하여 묶기 위해서 사용</td></tr>
+
+<tr align="center"><td align="center">부수 정보</td><td>&lt;aside&gt; 요소</td><td>본문의 내용과 구별되는 별개의 정보를 표현하기 위하여 사용
+예) 블로그에서 최신 댓글목록이나 토막상식, 배너 및 광고 등</td></tr>
+
+<tr align="center"><td align="center">꼬리말</td><td>&lt;footer&gt; 요소</td><td>웹 문서의 꼬리말에 해당하는 저자정보, 저작권 정보, 이용조건, 
+관련 링크 들을 나타내기 위해 사용</td></tr>
+</table>
+
+
+
+
+
+
+<p><a id="fourth">4장 링크와 멀티미디어 표현하기</a>
+<ol>
+<li>링크(link)</li>
+<table border="1">
+<tr><td>&lt;a&gt;요소</td>
+<td>
+<table border="1">
+<tr><td rowspan="2">href 속성</td>
+<td rowspan="2">이동하고자 하는 문서의 위치를 지정</td>
+<td>절대주소</td><td>URL 형식의 인터넷 주소</td>
+<td>&lt;a href=“http://www.w3c.org”&gt;w3c 홈페이지 방문</a></td></tr>
+<tr><td>상대주소</td><td>같은 폴더 위치에서 부터 상대 주소로 링크된 것으로 간주</td>
+<td>&lt;a href=“booklist.html”&gt;책 목록&lt;/a&gt;</td></tr>
+
+<tr><td>title 속성 </td>
+<td>하이퍼링크에 설명을 하고 싶을 때 사용</td>
+<td colspan="3">&lt;a href=“http://www.w3c.org” title=“W3C 홈페이지”&gt; W3C 홈페이지 방문 &lt;/a&gt;</td></tr>
+<tr>
+
+<td>target 속성</td>
+<td> 연결된 웹 문서를 여는 위치를 지정</td>
+<td colspan="3"><ul><li>_self  현재 창에서 열기(기본값)</li>
+<li>_blank : 새 창 또는 새 탭에서 열기</li>
+<li>_parent : 부모 프레임 창에서 열기</li>
+<li>_top: 최상위 프레임 창에서 열기</li>
+<li>프레임 이름 : 이름이 지정된 프레임 위치에서 열기</li></ul></td></tr>
+</table>
+</td><td>&lt;a href=“파일 이름 혹은 URL 주소” title=“설명”&gt; 링크 텍스트 &lt;/a&gt;</td></tr>
+</table>
+<li>책갈피 링크</li>
+동일한 문서 내에서 특정 지점으로 연결하는 방법
+<ul>
+<li>링크가 설정된 시작점
+&lt;a href=“#고유아이디”&gt; 시작점 링크&lt;/a&gt;</li>
+<li>문서 내 이동할 목적지
+&lt;a id=“고유아이디”&gt;&lt;/a&gt;</li>
+</ul>
+<li>이미지 삽입</li>
+<table border="1">
+<tr><td rowspan="2">&lt;img&gt;요소</td>
+<td><table border="1">
+<tr><td>src, width, height 속성
+<ul>
+<li>src 속성에는 이미지 파일의 이름을 지정</li>
+<li>width와 height 속성은 이미지의 크기를 조정해 주며, 지정해 주지 않으면 이미지 본래 크기로 화면에 나타남</li>
+</ul></td></tr>
+<tr><td>alt 속성
+<ul><li>“alternate text(대체 텍스트)” 의 약어로, 이미지에 대한 설명 텍스트를 지정함</li>
+<li>웹 페이지 화면에 이미지를 로드 하지 못할 경우 그 위치에 지정한 텍스트가 이미지 대신 출력됨</li></ul></td></tr>
+</table>
+<td>&lt;img src=“파일 이름” width=“가로크기” height=“세로크기”&gt;</td></tr>
+</table>
+<li>figure</li>
+<dl>
+<dt>&lt;figure&gt;요소</dt>
+<dd>그림, 사진, 다이어그램과 텍스트 등의 콘텐츠를 함께 묶어서 하나의 독립된 단위로 취급할 때 사용</dd>
+<dd>독립된 단위로 제거 하더라도 콘텐츠 흐름에 영향을 주지 않음</dd>
+</dl>
+<li>figcaption</li>
+<dl>
+<dt>&lt;figcaption&gt;요소</dt>
+<dd>&lt;figure&gt; 요소를 위한 제목을 표현</dd>
+<dd>&lt;figure&gt; 요소 내에 위치</dd>
+</dl>
+<li>iframe</li>
+<table border="1"><tr><th>요소 이름</th><th>설명</th><th>속성</th></tr>
+<tr><td rowspan="3">&lt;iframe&gt;요소</td>
+<td rowspan="3"><ul><li>브라우저 페이지 내에 또 다른 페이지 프레임을 삽입</li>
+<li>src, width, height, name 속성</li></ul>
+<td>src 속성 : 내부 프레임에 출력할 파일의 url 지정</td></tr>
+<tr><td>width와 height 속성 : 브라우저 프레임의 가로, 높이 크기</td></tr>
+<tr><td>name 속성 : 프레임의 이름
+ &lt;a&gt; 요소의 target 속성에 &lt;iframe&gt; 이름을 지정</td></tr>
+</table>
+<li>audio</li>
+<table border="1">
+<tr><th>요소 이름</th><th>설명</th><th>속성</th></tr>
+<tr><td rowspan="4">&lt;audio&gt;요소</td>
+<td rowspan="4"><ul>
+<li>웹 브라우저에서 바로 음악을 재생할 수 있게 삽입할 수 있음</li>
+<li>&lt;source&gt; 요소와 같이 사용하기</li>
+<li>웹 브라우저에서 오디오 파일이 지원되지 않는 경우를 대비</li>
+<li>&lt;source&gt; 요소에서 같은 내용을 여러 형식으로 작성한 파일 지정</li>
+<li>src 및 type 속성 : 오디오 파일의 이름 및 MIME 형식을 지정</li>
+<li>예, audio/mp3, audio/ogg, audio/wav 와 같이 지정</li>
+<li>오디오 파일 로드 전에 순서대로 재생가능 여부를 확인</li></ul></td>
+<td>src 속성 : 사운드 파일 이름</td></tr>
+<tr><td>controls 속성 : 기본적인 미디어 제어기를 표시할 지 여부</td></tr>
+<tr><td>autoplay 속성 : 파일이 로드되자 마자 자동으로 재생시킨다는 의미</td></tr>
+<tr><td>loop 속성 : 사운드를 반복 재생시킬 횟수</td></tr>
+</table>
+<li>video</li>
+<table border="1"><tr><th>요소 이름</th><th>속성</th><th>속성 설명</th></tr>
+<tr><td rowspan="4">&lt;video&gt;요소</td>
+<td>src, controls, loop, autoplay 속성</td>
+<td>&lt;audio&gt; 요소의 속성과 동일</td></tr>
+<tr><td>width, height 속성</td>
+<td>화면에서 비디오가 표시될 영역의 크기</td></tr>
+<tr><td>poster 속성</td><td>동영상이 로딩되고 있을 때 보여줄 이미지</td></tr>
+<tr><td>preload 속성</td>
+<td>브라우저가 미리 동영상을 로딩 할 지 여부
+<ul><li>auto(기본값) : 페이지를 로드하고 바로 비디오 파일을 다운로드</li>
+<li>metadata : 사용자가 재생 시키기 전까지는 비디오의 크기, 첫 프레임, 비디오 관련 정보 등과 같은 메타데이터만 다운로드</li>
+<li>none : 재생 시작 전까지 비디오 파일을 다운로드 안함</li></ul></td></tr></table></ol>
+</p>
+
+
+<p><a id="fifth">5장 폼 활용하기</a></p>
+
+&lt;form&gt;요소의 사용
+<ul><li>회원가입, 상품구매, 키워드 검색 등 사용자로부터 정보를 받을 때</li>
+<li>사용자와 애플리케이션이 상호작용</li>
+<li>사용자 입력 ⇒ 전송버튼 ⇒ 애플리케이션에 전달 ⇒ 실행결과 반환</li>
+</ul>
+&lt;form&gt;요소의 역할
+<ul>
+<li>사용자가 입력하는 정보를 하나로 묶어서 애플리케이션에 전달</li>
+<li>다양한 입력 양식을 그룹핑하고 전송방법을 설정</li>
+<li>&lt;form&gt; 요소 내 사용자의 정보 입력 양식</li>
+<li>&lt;input&gt;, &lt;textarea&gt;, &lt;select&gt; 등의 입력 요소를 이용</li>
+</ul>
+<table border="1">
+<tr><th>요소 이름</th><th>속성</th><th colspan="2">속성 설명</th></tr>
+<tr><td rowspan="4">&lt;form&gt;요소</td>
+<td rowspan="2">method 속성</td>
+<td rowspan="2">데이터 전송 방식 지정</td>
+<td>get방식: 전송할 데이터를 URL 주소 뒤에 포함, 간단한 데이터에는 편리, 그러나 보안에 취약</td></tr>
+<tr><td>post방식: 프로그램의 입출력 방식을 사용, 데이터 양에 제한 없다</td></tr>
+<tr><td>action 속성</td><td colspan="2">데이터 처리할 애플리케이션 주소 (웹서버 경우 URL)</td></tr>
+<tr><td>name속성</td><td colspan="2">폼 요소에 대한 이름</td></tr>
+</table>
+required,novalidate
+&lt;input&gt;요소의 속성
+pattern 속성
+placeholder 속성
+<ol>
+<li>type 속성: 입력 폼의 유형</li>
+<ul>
+<li>텍스트 관련: <a href="#text">text</a>, <a href="#password">password</a></li>
+<li>선택 관련 : <a href="#radio">radio</a>, <a href="#checkbox">checkbox</a></li>
+<li>버튼 : <a href="#submit">submit</a>, 
+<a href="#reset">reset</a>, 
+<a href="#button">button</a>, 
+<a href="#image">image</a></li>
+<li>기타 : 
+<a href="#file">file</a>, 
+<a href="#hidden">hidden</a></li>
+</ul>
+<li>name 속성(문자열 입력 필드, 한 줄)</li>
+<ul><li>애플리케이션에 전달될 변수명
+</li></ul>
+<li>value 속성(문자열 입력 필드, 한 줄)</li>
+<ul><li>value 속성 : 입력 받은 값을 전달 (입력창 초기문자)
+</li></ul>
+<li>min , max(날짜) 속성</li>
+
+<li>&lt;input&gt;요소에 추가된 새로운 입력 키워드
+<ul>
+<li>텍스트 관련: <a href="#email">email</a>, 
+<a href="#URL">URL</a>, 
+<a href="#tel">tel</a>, 
+<a href="#search">search</a></li>
+<li>날짜와 시간 : <a href="#date">date</date>, 
+<a href="#month">month</a>, 
+<a href="#week">week</a>, 
+<a href="#time">time</a>, 
+<a href="#datetime">datetime</a>, 
+<a href="#datetime-local">datetime-local</a></li>
+<li>색상 및 숫자: <a href="#number">number</a>, 
+<a href="#range">range</a>, 
+<a href="#color">color</a></li>
+
+</ul>
+</ol>
+<h2>type 속성</h2>
+<dl><dt style="border:1px solid black;"><a id="password">암호 입력 필드 "password"</a></dt>
+<dd>보안이 필요한 문자 입력, ‘•’ 으로 표시 (더 이상 보호 기능 없음)</dd>
+<dt style="border:1px solid black;"><a id="radio">라디오 버튼, "radio"</a></dt>
+<dd>name 속성값이 같은 그룹에서 value 값을 하나만 선택하여 전달</dd>
+<dd>예, “member=yes&sex=male”의 형태로 전달</dd>
+<dt style="border:1px solid black;"><a id="checkbox">체크박스 선택, "checkbox"</a></dt>
+<dd>체크박스에 표시된 모든 value 속성값 들이 애플리케이션으로 전송</dd>
+<dt style="border:1px solid black;"><a id="submit">전송 버튼, "submit"</a></dt>
+<dd>입력 데이터 전달</dd>
+<dd>&lt;form&gt; 요소에 있는 모든 입력 데이터가 &lt;form&gt;의 action 속성에서 지정한 애플리케이션 프로그램으로 전송</dd>
+<dt style="border:1px solid black;"><a id="reset">초기화 버튼, "reset"</a></dt>
+<dd>현재 입력된 양식을 모두 지움</dd>
+<dt style="border:1px solid black;"><a id="button">일반 버튼, "button"</a></dt>
+<dd>다양한 용도로 사용</dd>
+<dt style="border:1px solid black;"><a id="image">이미지 버튼, "image"</a></dt>
+<dd>alt 대체 문자열 사용 가능</dd>
+<dt style="border:1px solid black;"><a id="file">파일 선택하기, "file"</a></dt>
+<dd>파일 업로드 가능</dd>
+<dt style="border:1px solid black;"><a id="hidden">데이터 숨김, "hidden"</a></dt>
+<dd>시스템에서 특정 데이터를 처리하고 싶을 때</dd>
+<dd>예: 사용자 IP 주소</dd>
+</dl>
+추가된 서식이 있는 type의 키워드
+<dl>
+<dt><a id ="email">이메일 주소입력, "email</a></dt>
+<dd>이메일 주소가 존재 하는지 까지는 확인 불가 이나, 형식이 맞게 작성되었는지는 확인</dd>
+<dt><a id="URL"></a>URL 주소입력, "URL"</dt>
+<dd>인터넷 주소 표기 규정에 맞게 “http://” 가 추가 되었는지 확인해 줌</dd>
+<dd>또는 value 속성으로 미리 “http://” 를 지정할 수도 있다</dd>
+<dt><a id="search">검색창 입력, "search"</a></dt>
+<dd>검색어를 입력하면 오른쪽에 “X”가 표시되어 입력한 검색어를 취소할 수 있음</dd>
+<dt><a id="date">날짜 입력(일), "date"</a></dt>
+<dd>연-월-일</dd>
+<dt><a id="month">날짜 입력(월), "month"</a></dt>
+<dd>연-월</dd>
+<dt><a id="week">날짜 입력(주), "week"</a></dt>
+<dd>연-주 (번호순서 1월 첫 주가 ‘W01’)</dd>
+<dt><a id="time">"위/아래” 버튼으로 시간 조정, "time"</a></dt>
+<dt><a id="datetime">UTC 국제표준 시간대, "datetime"</a></dt>
+<dt><a id="datetime-local">현지 시간, "datetime-local"</a></dt>
+</dl>
+
+<h2>method 속성</h2>
+<table border="1">
+<tr><td>get방식</td><td>post방식</td></tr>
+<tr><td>전송할 데이터를 URL 주소 뒤에 포함</td><td>프로그램의 입출력 방식을 사용</td></tr>
+<tr><td>간단한 데이터에는 편리, 그러나 보안에 취약</td><td>데이터 양에 제한 없다</td></tr>
+</table>
+<h2>action 속성</h2>
+데이터 처리할 애플리케이션 주소 (웹서버 경우 URL)
+<h2>name 속성</h2>
+폼 요소에 대한 이름
+애플리케이션에 전달될 변수명
+<h2>value 속성</h2>
+입력 받은 값을 전달 (입력창 초기문자)
+<h2>pattern 속성</h2>
+전화번호 입력
+<ul>
+<li>원하는 전화번호와 자리수에 유효한 패턴을 지정</li>
+<li>정규 표현식으로 정의, 자바스크립트에서 사용하는 패턴과 동일</li>
+<li>pattern=”[A-Za-z]{no}” , pattern=”[0-9]{no}” , 
+pattern=”[0-9]+” , pattern=”[A-Za-z0-9]{min, max}”</li>
+</ul>
+<h2>placeholder 속성</h2>
+입력할 자리수 표시 (단순히 표시만) 
+<h2>min 속성, max 속성</h2>
+
+
+<br><br>&lt;textarea&gt;요소
+텍스트 영역 필드(여러줄)
+<table>
+<tr><td>표시 영역보다 많은 텍스트를 입력하면 스크롤바</td>
+<td>&lt;textarea name=”이름” cols=”열의 수” rows=”행의 수”&gt; 
+&lt;/textarea&gt;</td>
+</table>
+
+<br><br>
+&lt;select&gt;요소
+&lt;select&gt;요소 내에 &lt;option&gt;항목
+<ul>
+<li>드롭다운 형태(size= 1), 혹은 스크롤 박스 형태(size > 1)</li>
+<li>multiple 속성 : 다중 선택</li>
+<li>각 항목은 &lt;select&gt; 요소 내에서 &lt;option&gt; 요소로 정의</li>
+</ul>
+select요소 내의 &lt;option&gt;요소
+
+<br><br>
+&lt;label &gt;요소
+텍스트 라벨: 특정 입력 필드에 연결
+<ul>
+<li>데이터 전달에는 영향이 없음</li>
+<li>버튼이외의 텍스트영역을 선택해도 선택이 가능</li>
+<li>&lt;label for=”입력아이디”&gt;</li>
+</ul>
+
+<br><br>
+&lt;fieldset&gt;요소
+그룹핑
+<table border="1">
+<tr><td rowspan="3">
+<ul>
+<li>폼 양식을 그룹핑하는 범위를 지정</li>
+<li>사용자의 시각적 편의를 위해서 제공</li>
+<li>입력 필드의 그룹 주위에 기본 스타일로 테두리 선</li>
+</ul></td><td>name 속성 : 그룹의 이름을 지정하는 속성</td></tr>
+<tr><td>form 속성 : 폼과 연결</td></tr>
+<tr><td>disabled 속성 : 그룹 내의 모든 하위 입력 요소들을 비활성화</td></tr>
+</table>
+
+&lt;legend&gt;요소
+<ul>
+<li>그룹을 구분하기 위한 그룹의 제목 라벨</li>
+<li>&lt;fieldset&gt; 요소에 포함되는 첫 번째 자식 요소로서 한번만 사용</li>
+<li>그룹 라벨의 스타일은 그룹을 구분하는 선의 중간에 걸쳐서 표시</li>
+</ul>
+<a href="REVIEW.html" title="리뷰 화면으로 이동" target="_blank">Review</a>
+
+
+
+</article>
+<hr width="800">
+<aside>
+<a href="#up">
+맨위로 버튼
+</a>
+</aside>
+<footer>
+<pre align="center">&copy;2214347 이세진&amp; 숙명여자대학교 웹프로그래밍 첫걸음
+</pre>
+</footer>
+</body>
+</html>

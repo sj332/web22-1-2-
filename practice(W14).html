@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+ <body>
+  <script>
+   function showPicture(){
+    winResult=window.open("","_blank","width=360, height=500");
+	winResult.document.write("<img
+	src="bbang.jpg"
+	onclick='window.close();'>");
+	return;
+   }
+  </script>
+  <img onclick="showPicture()"
+  src="bbang.jpg">
+ </body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  #djtitle{color:black;}
+  a:hover{color:black; text-decoration:none;}
+  a{color:lightgray; text-decoration:none;}
+  a:link{color:lightgray; text-decoration:none;} 
+  a:visited{color:lightgray; text-decoration:none;} 
+  img{border-radius:1%;}
+  #toc-content {
+    display: none;
+  }
+  #toc-toggle {
+    cursor: pointer;
+    color: #2962ff;
+  }
+  #toc-toggle:hover {
+    text-shadow:1px 1px 2px gray;
+  }
+  * {margin:0;padding:0}
+    li {list-style:none;}
+	#gallery{
+        width:700px;margin:30px auto; 
+        border:1px solid #999;
+        box-shadow:0 5px 5px rgba(0,0,0,0.3);}
+	#gallery h1 {text-align:center;}
+    #gallery img {border:1px solid #666; }
+    #photo {text-align:center;}
+    #photo_list ul { width:900px; margin:0 auto; overflow:hidden;}
+    #photo_list ul li {width:100px; float:left; text-align:center;}
+    #photo_list {width:300px; margin:10px auto; overflow:hidden;}
+</style>
+<link rel='stylesheet' href='main.css'>
+</head>
+<body>
+<div id="start">
+<h2><table id="list"><tr align="center">
+<td id="title"><a href="index.html">
+<img src="ggd.jpg" alt="타이틀이미지" width="50"></a></td>
+<td><a href="daejeon.html"><span id="djtitle">대전이란?</span></a></td>
+<td><a href="district.html"><span>지역 추천</span></a></td>
+<td><a href="todo1.html"><span>맛집 추천</span></a></td>
+<td><a href="todo2.html"><span>To Do 리스트</span></a></td>
+<td><a href="festival.html"><span>축제</span></a></td>
+</tr></div></table></h2>
+<hr>
+<div id="gallery">
+<img src="map.jpg" class="mapp"> 
+<ul>
+<li>위치<br>
+<ol>
+<li>지리적 위치<br>
+대전은 세종특별자치시 및 충남의 공주시, 
+논산시, 금산군, 충북의 청주시, 보은군, 
+옥천군과 접해있고 수도 서울까지는 167.3km, 
+부산까지는 238.2km, 광주까지는 
+169km의 거리에 있다.</li>
+<br>
+<li>위치 특징<br>
+<img src="bunji.jpg"><br>
+공주와의 경계에 계룡산(845m), 
+청주시와의 경계에 대청댐이 있으며, 
+대전광역시를 중심으로 동쪽에는 식장산, 
+서쪽에는 구봉산, 남쪽에는 보문산, 
+북쪽에는 계족산의 연봉에 둘러 쌓여있는 
+분지형태의 도시이다.</li></ol></li>
+<br>
+<li>행정구역<br>
+<img src="dis2.png"><br>
+1989년 대덕군 편입과 함께 대전직할시로 승격, 5개 구로 설치되었으며, 
+1995년에는 대전직할시에서 대전광역시로 명칭 변경되었다.
+2021년 12월 말 우리시 행정구역은 539.5㎢, 
+이중 면적은 유성구가 176.6㎢로 가장 넓고, 인구는 
+2021년 12월말 현재 관공서, 상업시설이 밀집되고 
+주거 및 교육시설이 밀집된 서구가 473,952명(외국인 제외)으로 가장 많다. 
+동구·중구·서구·유성구·대덕구 등 5개구 81개동으로 행정조직이 편성되어 있다.</li>
+<br>
+<li>캐릭터<br>
+<ol>
+<li>한꿈이<br>
+<img src="character_main.png">
+</li>
+<br>
+<li>꿈돌이
+<img src="ggumdol.png">
+</li>
+</ol></li>
+<br>
+<li>인구<br>
+대전시민 총인구 남자 여자<br>
+2022.5월 기준<br>
+1448933 722840 726093</li>
+<br>
+<li>지역카드<br>
+온통대전<br>
+10%~15%  캐쉬백<br>
+<iframe src="https://www.ontongdaejeon.kr/main.do" width="700" height="500">
+</li>
+</ul>
+</div>
+<br><br><br>
+<hr>
+<footer>
+<p align='center'>by 2214347 이세진 &copy; 숙명여자대학교 웹프로그래밍 첫걸음</p>
+</footer>
+</body>
+</html>

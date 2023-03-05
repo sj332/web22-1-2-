@@ -1,0 +1,247 @@
+$("document").ready(function(){
+    
+    var fn = GET('fn');
+    var rs = GET('rs');
+    var rmn = GET('rmn')
+    var dl = GET('dl')
+    var dulr = GET('durl')
+    
+
+    var referrerInfo = document.referrer.split( '/' );
+
+    console.log(dulr)
+    if(referrerInfo[2] == 'doc2web.coursemos.kr.s3.ap-northeast-2.amazonaws.com' || referrerInfo[2] == 'doc2web.coursemos.kr'){ // for doc2web
+        
+        if(rmn != null){
+            setTimeout(function(){ 
+                     
+        
+                    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { // if mobile
+                        
+                        var fileNameBox = "<div class='fnm' style='color:white;padding:20px;'>" + rmn + "</div>";
+                        fileNameBox = $.parseHTML(fileNameBox);
+                        $(fileNameBox).css('font-size','35px');
+                        var logo = $("#headLogo").html(fileNameBox);                        
+                        
+                        $("#header .title .paging").css('float','right');
+                        $("#header .title").css('float','none');
+                        $("#header .title").css('padding','4px');
+                        $("#header .title").css('margin-right','10px');
+
+                    }else{ // if PC
+
+                        if(dl == 1){ // Generate Print and Download Button
+                            if(dulr != undefined){
+                                var downloadUrl = dulr;
+                                downloadUrl = downloadUrl.replace('index.html?', '')
+                                downloadUrl = parseQuery(downloadUrl)['url']
+                                var btnsHtml = "<div>";
+            
+                                btnsHtml += "<a id='btn-download' class='btn' href='" + downloadUrl + "' download> Down </a>";
+                                btnsHtml += "<a id='btn-print' class='btn' href='#' > Print </a>";
+                                btnsHtml += "<div class='cr'></div>";
+                                btnsHtml += "</div>";                                  
+                                btnsHtml = $.parseHTML(btnsHtml);
+                                $(btnsHtml).find('#btn-download').css('float','left');
+                                $(btnsHtml).find('#btn-download').css('margin-right','10px');
+            
+                                $(btnsHtml).find('#btn-print').css('float','left');
+                                
+                                $(btnsHtml).find('#btn-print').click(function(){
+    
+                                    window.print();
+                                });
+    
+                                $(btnsHtml).find('.btn').css('margin-top','5px');
+                                $(btnsHtml).find('.btn').css('display','block');
+                                $(btnsHtml).find('.btn').css('text-decoration','none');
+                                $(btnsHtml).find('.btn').css('background-color','#c9c9c9');
+                                $(btnsHtml).find('.btn').css('color','#424242');
+                                $(btnsHtml).find('.btn').css('padding','8px');
+            
+                                $(btnsHtml).find('.btn').mouseover(function(){
+                                    $(this).css('background-color','#b1b1b1');
+                                });
+                                $(btnsHtml).find('.btn').mouseleave(function(){
+                                    $(this).css('background-color','#c9c9c9');
+                                }); 
+                            }
+ 
+                        }
+                        
+                        var fileNameBox = "<div class='fnm' style='color:white;'>" + rmn + "</div>";
+                        fileNameBox = $.parseHTML(fileNameBox);
+                        $(fileNameBox).css('font-size','15px');
+                        $(fileNameBox).css('padding','11px');
+                        var logo = $("#headLogo").html(fileNameBox);
+                        //$(".dk1").css('background-color','#32658f');
+                        $("#headLogo").css('background-image', 'none');
+                        $("#headLogo").css('padding', '0px');
+
+                        $('#header').contents().find(".gnb").html(btnsHtml);
+                    }
+
+    
+     
+                    //}               
+                
+             }, 100);
+        }        
+    }else{ // for UBDoc
+ 
+
+        if(rmn != null){
+            setTimeout(function(){ 
+    
+
+                        
+                                       
+                if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) { // if mobile
+                    
+                    var fileNameBox = "<div class='fnm' style='color:white;padding:20px;float:left;'>" + rmn + "</div>";
+                    if(dl == 1){ // Generate Print and Download Button
+                        if(dulr != undefined){
+
+                            var downloadUrl = dulr;
+                            console.log("downloadUrl : ", downloadUrl);
+                            
+                            var btnsHtml = "<div>";
+        
+                            btnsHtml += "<a id='btn-download' class='btn' href='" + downloadUrl + "' download> Down </a>";
+                            btnsHtml += "<a id='btn-print' class='btn' href='#' > Print </a>";
+                            btnsHtml += "<div class='cr'></div>";
+                            btnsHtml += "</div>";                    
+    
+                            $("#headLogo").css('width','100%');
+                            $("#header .title .paging").remove();
+                            fileNameBox += "<div id='btn-download' class='btn btn-info' style='float:right;color:dfdfdf;font-size:20px;padding:8px;background-color:#ccc;margin-top:15px;' > Down </div>";                        
+                        }
+                    }else{
+                             $("#header .title .paging").css('float','right');
+                    }
+
+                    
+                    
+                    $(fileNameBox).css('font-size','30px');                  
+                    
+                    fileNameBox = $.parseHTML(fileNameBox);
+                    $("#headLogo").append(fileNameBox);                    
+                    console.log(fileNameBox)
+                    $("#header .title").css('float','none');
+                    $("#header .title").css('padding','4px');
+                    $("#header .title").css('margin-right','10px');
+                
+                    
+                    console.log( $(fileNameBox).find("#btn-download").html());
+
+
+                    //$("#headLogo #btn-download").html(btnsHtml);
+                    $("#headLogo #btn-download").click(function(){
+                        downloadURI(downloadUrl, rmn);
+                    });
+        
+                }else{ // if PC
+
+                    if(dl == 1){ // Generate Print and Download Button
+                        if(dulr != undefined){
+                            var downloadUrl = dulr;
+
+                            
+                            var btnsHtml = "<div>";
+        
+                            btnsHtml += "<a id='btn-download' class='btn' href='" + downloadUrl + "'  > Down </a>";
+                            btnsHtml += "<a id='btn-print' class='btn' href='#' > Print </a>";
+                            btnsHtml += "<div class='cr'></div>";
+                            btnsHtml += "</div>";                    
+    
+                            $("#headLogo").css('width','100%');
+                            $("#header .title .paging").remove();
+                            fileNameBox += "<div id='btn-download' class='btn btn-info' target='_blank' style='float:right;color:dfdfdf;font-size:20px;padding:8px;background-color:#ccc;margin-top:15px;' download> Down </div>";                        
+                        }
+                    }else{
+                             $("#header .title .paging").css('float','right');
+                    }
+                    
+                    btnsHtml = $.parseHTML(btnsHtml);
+                    $(btnsHtml).find('#btn-download').css('float','left');
+                    $(btnsHtml).find('#btn-download').css('margin-right','10px');
+
+                    $(btnsHtml).find('#btn-print').css('float','left');
+                    $(btnsHtml).find('#btn-print').click(function(){
+
+                        window.print();
+                    });
+                    $(btnsHtml).find('.btn').css('margin-top','5px');
+                    $(btnsHtml).find('.btn').css('display','block');
+                    $(btnsHtml).find('.btn').css('text-decoration','none');
+                    $(btnsHtml).find('.btn').css('background-color','#c9c9c9');
+                    $(btnsHtml).find('.btn').css('color','#424242');
+                    $(btnsHtml).find('.btn').css('padding','8px');
+
+                    $(btnsHtml).find('.btn').mouseover(function(){
+                        $(this).css('background-color','#b1b1b1');
+                    });
+                    $(btnsHtml).find('.btn').mouseleave(function(){
+                        $(this).css('background-color','#c9c9c9');
+                    });  
+
+                    
+                    var fileNameBox = "<div class='fnm' style='color:white;'>" + rmn + "</div>";
+                    fileNameBox = $.parseHTML(fileNameBox);
+                    $(fileNameBox).css('font-size','15px');
+                    $(fileNameBox).css('padding','11px');
+                    var logo = $("#headLogo").html(fileNameBox);
+                    //$(".dk1").css('background-color','#32658f');
+                    $("#headLogo").css('background-image', 'none');
+                    $("#headLogo").css('padding', '0px');
+
+                    $('#header').contents().find(".gnb").html(btnsHtml);
+
+
+
+
+                }
+
+    
+     
+                    //}               
+                
+             }, 100);
+        }
+
+
+
+    }
+    
+    
+  
+
+   
+
+ 
+});
+
+function downloadURI(uri, name) {
+    var link = document.createElement("a");
+    link.download = name;
+    link.href = uri;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    delete link;
+  }
+
+
+function GET(name){ // Don't Confuse between php = $_GET '[]' this $.GET '()' 
+    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+}
+
+function parseQuery(queryString) {
+    var query = {};
+    var pairs = (queryString[0] === '?' ? queryString.substr(1) : queryString).split('&');
+    for (var i = 0; i < pairs.length; i++) {
+        var pair = pairs[i].split('=');
+        query[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1] || '');
+    }
+    return query;
+}

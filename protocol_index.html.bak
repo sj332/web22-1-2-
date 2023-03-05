@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>첫화면</title>
+ </head>
+ <body>
+  <h1>웹프로그래밍 첫걸음</h1>
+  <p>
+	본 화면은 가장 처음으로 보여주는 화면입니다.
+  </p>
+  <p><a href="sample.html">다음</a></p>
+ </body>
+</html>

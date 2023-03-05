@@ -1,0 +1,52 @@
+<! DOCTYPE html>
+<html>
+ <head>
+  <meta author="2214347 이세진">
+  <title>웹프로그래밍첫걸음_2214347이세진_중간대체과제_보고서</title>
+ </head>
+<body bgcolor="whitesmoke">
+<br>
+<h1 align="center" style="font-family:serif;" style="font-size:40px;"> 웹프로그래밍 보고서</h1>
+<br>
+<hr width="800">
+<p> 
+<a id="up"></a>
+<pre>
+<!-중간고사 대체과제
+
+주석, 하이퍼링크
+지금까지 배운 HTML5 태그를 사용하여 정리한 보고서를 웹문서 형식으로 제출할 것!
+
+(다양한 태그를 많이 사용하는 것이 점수 높음. 성실도 평가가 주안점)-->
+</pre>
+<nav align="center" style="font-family:serif;">
+<p><h3 style="font-family:serif;">
+&nbsp;&nbsp;&lt;목차,좌표 연결&gt;</h3></p>
+<p><a href="FIRST.html" >&nbsp;&nbsp;1장&nbsp;&nbsp;인터넷과 웹 환경</a></p>
+
+<p><a href="SECOND.html" >&nbsp;&nbsp;2장&nbsp;&nbsp;HTML5 문서 기본 이해하기</a></p>
+
+<p><a href="THIRD.html" >&nbsp;&nbsp;3장&nbsp;&nbsp;문서 구조 표현하기</a></p>
+
+<p><a href="FOURTH.html" >&nbsp;&nbsp;4장&nbsp;&nbsp;링크와 멀티미디어 표현하기</a></p>
+
+<p><a href="FIFTH.html" >&nbsp;&nbsp;5장&nbsp;&nbsp;폼 활용하기</a></p>
+</nav>
+<br><br><br>
+<aside align="center">
+<iframe width="560" height="315" 
+src="https://www.youtube.com/embed/VoB3Lh7QK6k" 
+title="YouTube video player" 
+frameborder="0" allow="accelerometer; 
+autoplay; clipboard-write; 
+encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
+</aside>
+
+<hr width="800">
+<footer>
+<pre align="center">&copy;2214347 이세진&amp; 숙명여자대학교 웹프로그래밍 첫걸음
+</pre>
+</footer>
+</body>
+</html>

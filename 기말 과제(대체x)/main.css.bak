@@ -1,0 +1,13 @@
+<!DOCTYPE css>
+<html>
+<head>
+<style>
+  span{color:lightgray;}
+  #list{
+  margin-left:auto; margin-right:auto; width:90%;}
+  #title{text-align:left;}
+  #intro{text-align:center;}
+  *{font-family:serif;}
+  *{background-color:"whitesmoke"}
+</style></head>
+</html>

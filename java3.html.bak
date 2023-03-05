@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+ <body>
+  <script>
+   var num1,num2;
+   num1=parseInt(prompt("첫번째 정수를 입력하세요"));
+   num2=parseInt(prompt("두번째 정수를 입력하세요"));
+   
+   document.write(num1 + "+" + num2+ "="+(num1+num2));
+  </script>
+ </body>
+</html>

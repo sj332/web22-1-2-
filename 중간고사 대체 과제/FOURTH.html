@@ -1,0 +1,198 @@
+<! DOCTYPE html>
+<html>
+ <head>
+  <meta author="2214347 이세진">
+  <title>웹프로그래밍첫걸음_2214347이세진_중간대체과제_보고서</title>
+ </head>
+<body bgcolor="whitesmoke">
+<br>
+<h1 align="center" style="font-family:serif;" style="font-size:40px;"> 웹프로그래밍 보고서</h1>
+<br>
+<hr width="800">
+<p> 
+<a id="up"></a>
+<pre>
+<!-중간고사 대체과제
+
+주석, 하이퍼링크
+지금까지 배운 HTML5 태그를 사용하여 정리한 보고서를 웹문서 형식으로 제출할 것!
+
+(다양한 태그를 많이 사용하는 것이 점수 높음. 성실도 평가가 주안점)-->
+</pre>
+
+
+<header>
+<nav align="center" style="font-family:serif;">
+<p><h3>&nbsp;&nbsp;&lt;목차,좌표 연결&gt;</h3></p>
+<br>
+<p><a href="FIRST.html" >&nbsp;&nbsp;1장&nbsp;&nbsp;인터넷과 웹 환경</a></p>
+
+<p><a href="SECOND.html" >&nbsp;&nbsp;2장&nbsp;&nbsp;HTML5 문서 기본 이해하기</a></p>
+
+<p><a href="THIRD.html" >&nbsp;&nbsp;3장&nbsp;&nbsp;문서 구조 표현하기</a></p>
+
+<p><a href="FOURTH.html" >&nbsp;&nbsp;4장&nbsp;&nbsp;링크와 멀티미디어 표현하기</a></p>
+
+<p><a href="FIFTH.html" >&nbsp;&nbsp;5장&nbsp;&nbsp;폼 활용하기</a></p>
+</nav></header>
+<br><br><br>
+<aside align="right">
+<a href="index.html">
+<input type="button" value="처음 화면으로 돌아가기"
+style="font-family:serif;"></a>
+</aside>
+<hr width="800">
+<article>
+<section style="font-family:serif;">
+
+<br>
+<h2 align="center"style="font-family:serif;">
+4장 링크와 멀티미디어 표현하기</h2>
+<ol>
+<li>링크(link)</li>
+<table border="1">
+<caption>&lt;a&gt;요소</caption>
+<tr><td>&lt;a&gt;요소</td>
+<td>
+<table border="1">
+<tr><td rowspan="2">href 속성</td>
+<td rowspan="2">이동하고자 하는 문서의 위치를 지정</td>
+<td>절대주소</td><td>URL 형식의 인터넷 주소</td>
+<td>&lt;a href=“http://www.w3c.org”&gt;w3c 홈페이지 방문</a></td></tr>
+<tr><td>상대주소</td><td>같은 폴더 위치에서 부터 상대 주소로 링크된 것으로 간주</td>
+<td>&lt;a href=“booklist.html”&gt;책 목록&lt;/a&gt;</td></tr>
+
+<tr><td>title 속성 </td>
+<td>하이퍼링크에 설명을 하고 싶을 때 사용</td>
+<td colspan="3">&lt;a href=“http://www.w3c.org” title=“W3C 홈페이지”&gt; W3C 홈페이지 방문 &lt;/a&gt;</td></tr>
+<tr>
+
+<td>target 속성</td>
+<td> 연결된 웹 문서를 여는 위치를 지정</td>
+<td colspan="3"><ul><li>_self  현재 창에서 열기(기본값)</li>
+<li>_blank : 새 창 또는 새 탭에서 열기</li>
+<li>_parent : 부모 프레임 창에서 열기</li>
+<li>_top: 최상위 프레임 창에서 열기</li>
+<li>프레임 이름 : 이름이 지정된 프레임 위치에서 열기</li></ul></td></tr>
+</table>
+</td><td>&lt;a href=“파일 이름 혹은 URL 주소” title=“설명”&gt; 링크 텍스트 &lt;/a&gt;</td></tr>
+</table>
+
+<br>
+<li>책갈피 링크</li>
+동일한 문서 내에서 특정 지점으로 연결하는 방법
+<ul>
+<li>링크가 설정된 시작점
+&lt;a href=“#고유아이디”&gt; 시작점 링크&lt;/a&gt;</li>
+<li>문서 내 이동할 목적지
+&lt;a id=“고유아이디”&gt;&lt;/a&gt;</li>
+</ul>
+
+<br>
+<li>이미지 삽입</li>
+<table border="1">
+<caption>&lt;img&gt;요소</caption>
+<tr><td rowspan="2">&lt;img&gt;요소</td>
+<td><table border="1">
+<tr><td>src, width, height 속성
+<ul>
+<li>src 속성에는 이미지 파일의 이름을 지정</li>
+<li>width와 height 속성은 이미지의 크기를 조정해 주며, 지정해 주지 않으면 이미지 본래 크기로 화면에 나타남</li>
+</ul></td></tr>
+<tr><td>alt 속성
+<ul><li>“alternate text(대체 텍스트)” 의 약어로, 이미지에 대한 설명 텍스트를 지정함</li>
+<li>웹 페이지 화면에 이미지를 로드 하지 못할 경우 그 위치에 지정한 텍스트가 이미지 대신 출력됨</li></ul></td></tr>
+</table>
+<td>&lt;img src=“파일 이름” width=“가로크기” height=“세로크기”&gt;</td></tr>
+</table>
+<br>
+<li>figure</li>
+<dl>
+<dt>&lt;figure&gt;요소</dt>
+<dd>그림, 사진, 다이어그램과 텍스트 등의 콘텐츠를 함께 묶어서 하나의 독립된 단위로 취급할 때 사용</dd>
+<dd>독립된 단위로 제거 하더라도 콘텐츠 흐름에 영향을 주지 않음</dd>
+</dl>
+<li>figcaption</li>
+<dl>
+<dt>&lt;figcaption&gt;요소</dt>
+<dd>&lt;figure&gt; 요소를 위한 제목을 표현</dd>
+<dd>&lt;figure&gt; 요소 내에 위치</dd>
+</dl>
+
+<br>
+<li>iframe</li>
+<table border="1">
+<caption>&lt;iframe&gt;요소</caption>
+<thead><tr><th>요소 이름</th><th>설명</th><th>속성</th></tr>
+</thead>
+<tbody>
+<tr><td rowspan="3">&lt;iframe&gt;요소</td>
+<td rowspan="3"><ul><li>브라우저 페이지 내에 또 다른 페이지 프레임을 삽입</li>
+<li>src, width, height, name 속성</li></ul>
+<td>src 속성 : 내부 프레임에 출력할 파일의 url 지정</td></tr>
+<tr><td>width와 height 속성 : 브라우저 프레임의 가로, 높이 크기</td></tr>
+<tr><td>name 속성 : 프레임의 이름
+ &lt;a&gt; 요소의 target 속성에 &lt;iframe&gt; 이름을 지정</td></tr>
+ </tbody>
+</table>
+
+<br>
+<li>audio</li>
+<table border="1">
+<caption>&lt;audio&gt;요소</caption>
+<thead>
+<tr><th>요소 이름</th><th>설명</th><th>속성</th></tr>
+</thead>
+<tbody>
+<tr><td rowspan="4">&lt;audio&gt;요소</td>
+<td rowspan="4"><ul>
+<li>웹 브라우저에서 바로 음악을 재생할 수 있게 삽입할 수 있음</li>
+<li>&lt;source&gt; 요소와 같이 사용하기</li>
+<li>웹 브라우저에서 오디오 파일이 지원되지 않는 경우를 대비</li>
+<li>&lt;source&gt; 요소에서 같은 내용을 여러 형식으로 작성한 파일 지정</li>
+<li>src 및 type 속성 : 오디오 파일의 이름 및 MIME 형식을 지정</li>
+<li>예, audio/mp3, audio/ogg, audio/wav 와 같이 지정</li>
+<li>오디오 파일 로드 전에 순서대로 재생가능 여부를 확인</li></ul></td>
+<td>src 속성 : 사운드 파일 이름</td></tr>
+<tr><td>controls 속성 : 기본적인 미디어 제어기를 표시할 지 여부</td></tr>
+<tr><td>autoplay 속성 : 파일이 로드되자 마자 자동으로 재생시킨다는 의미</td></tr>
+<tr><td>loop 속성 : 사운드를 반복 재생시킬 횟수</td></tr>
+</tbody>
+</table>
+
+<br>
+<li>video</li>
+<table border="1" >
+<caption>&lt;video&gt;요소</caption>
+<thead>
+<tr><th><p style="font-family:serif;">
+요소 이름</p></th><th>속성</th><th>속성 설명</th></tr>
+</thead>
+<tbody>
+<tr><td rowspan="4">&lt;video&gt;요소</td>
+<td>src, controls, loop, autoplay 속성</td>
+<td>&lt;audio&gt; 요소의 속성과 동일</td></tr>
+<tr><td>width, height 속성</td>
+<td>화면에서 비디오가 표시될 영역의 크기</td></tr>
+<tr><td>poster 속성</td><td>동영상이 로딩되고 있을 때 보여줄 이미지</td></tr>
+<tr><td>preload 속성</td>
+<td>브라우저가 미리 동영상을 로딩 할 지 여부
+<ul><li>auto(기본값) : 페이지를 로드하고 바로 비디오 파일을 다운로드</li>
+<li>metadata : 사용자가 재생 시키기 전까지는 비디오의 크기, 첫 프레임, 비디오 관련 정보 등과 같은 메타데이터만 다운로드</li>
+<li>none : 재생 시작 전까지 비디오 파일을 다운로드 안함</li></ul></td></tr>
+</tbody></table></ol>
+<br><br><br>
+</section>
+</article>
+<aside>
+<a href="#up"><input type="button" value="맨위로"
+style="font-family:serif;"></a>
+&nbsp;
+</aside>
+<footer>
+<pre align="center" 
+style="font-family:serif;">&copy;2214347 이세진&amp; 숙명여자대학교 웹프로그래밍 첫걸음
+</pre>
+</footer>
+</body>
+</html>

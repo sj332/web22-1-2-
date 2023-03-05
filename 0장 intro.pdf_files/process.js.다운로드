@@ -1,0 +1,180 @@
+(function($){
+	
+	$.ubdocStart = function(){
+		$("#loadingBox").css("display","block");
+		$("#uiBlock").css("display","block");
+		$(".loadingMessage").html("초기화 중 입니다.");
+		$.checkState();
+		checkState = setInterval(function(){
+			$.checkState();
+		} , 5000);
+		//$.trnasFile();
+	}
+
+	$.docRenderIframe = function(organization_code, filename, fileuser, file_realname, file_download){
+		$('head').append('<title>' + file_realname + '</title>');
+			console.log(window.location.href )		
+			
+		var durl = encodeURIComponent(window.location.href.replace('/ubdoc/',"/ubdoc/download.php") );
+		var rmn = encodeURI(file_realname);
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {//Mobile
+
+			if(file_download == 1){ // 다운로드 활성화
+					var frameUrl = "//doc.coursemos.co.kr/view/v1/viewer/doc_mobile.xhtml?fn=" + filename + "&rs=/" + organization_code + "/" + fileuser + "/" + filename + "&rmn=" + rmn + "&dl=" + file_download + "&durl=" + durl;
+
+			}else{
+					var frameUrl = "//doc.coursemos.co.kr/view/v1/viewer/doc_mobile.xhtml?fn=" + filename + "&rs=/" + organization_code + "/" + fileuser + "/" + filename + "&rmn=" + rmn + "&dl=" + file_download;
+			}
+					window.location.href = frameUrl;			
+			
+		}else{//PC
+			if(file_download == 1){
+				var frameUrl = "//doc.coursemos.co.kr/view/v1/viewer/doc.html?fn=" + filename + "&rs=/" + organization_code + "/" + fileuser + "/" + filename + "&rmn=" + rmn + "&dl=" + file_download + "&durl=" + durl;		
+			}else{
+				var frameUrl = "//doc.coursemos.co.kr/view/v1/viewer/doc.html?fn=" + filename + "&rs=/" + organization_code + "/" + fileuser + "/" + filename + "&rmn=" + rmn + "&dl=" + file_download;			
+			}
+			
+		}
+		
+		var frameHtml = "<iframe id='docFrame' style='border:0px;width:100%;height:100%;' src='" + frameUrl +"'></iframe>";
+		
+		$("#container").html(frameHtml);
+	}
+	$.docRender = function(organization_code, filename, fileuser, file_realname){
+		$("head").append("<title>" + file_realname + "</title>");
+
+		
+		var docUrl = "doc.coursemos.co.kr/" + organization_code + "/" + fileuser;
+		
+		var meta_doc_url = "<meta property='doc_url' content='" + docUrl + "'>";
+		var meta_filename = "<meta property='doc_filename' content='" + filename + "'>";
+		
+		$('head').append(meta_doc_url);
+		$('head').append(meta_filename);
+		
+	    var jqTag = document.createElement('script');
+		    jqTag.type = 'text/javascript';
+		    jqTag.src =  "//ubdoc.api.coursemos.co.kr/libs/docViewer/libs/word_body.js";
+			$("head").append(jqTag);
+		
+		/*		
+		$.get( docUrl, function( data ) {
+			console.log(data);
+			var content = $.parseHTML(data);
+			console.log("Content : ", content);
+
+			$('img', data).each(function(key, val){
+				var imgSrc = $(this).attr("src");
+				var realsrc = "//doc.coursemos.co.kr/" + organization_code + "/" + fileuser + "/" + filename + "/" + imgSrc;
+				$(this).attr('src',realsrc);
+			});
+
+			//$("#content_body").append(data);		
+			
+		});	
+		*/
+	}
+
+	$.checkState = function(){
+		
+		var id = $.GET('id');
+		var tp = $.GET('tp');
+		var pg = $.GET('pg');
+		var item = $.GET('item');
+		var fid = $.GET('fid');
+
+		var transData = {
+			"job" : "checkState",
+			"id" : id,
+			"tp" : tp,
+			"pg" : pg,
+			"item" : item,
+			"fid" : fid 
+		}
+		var apiRoute = $.GET('apiRoute');
+		
+		var apiUrl = '/local/ubdoc/worker.php';
+
+		if(apiRoute !== null){
+			apiUrl = apiRoute;
+			var token = $.getMeta('property','token');
+			var file_id = $.getMeta('property','file_id');
+			
+			transData = {
+				'_token' : token,
+				'file_id' : file_id,
+		
+			}			
+		}
+		
+		/* stateCode List
+		*	100 : All Right
+		* 	201 : File doesn't exists
+		*	202 : File Uploading
+		*	203 : Converting Add queue
+		*	204 : File Current Converting	
+		*   300 : File can't convertable	
+		*/	
+		//사용자 서버에서 서버로 데이터 콜
+		$.ajax({
+	        url: apiUrl,
+	        data: transData,
+	        type: 'POST',
+	        dataType: 'JSON',
+	        success: function(result){
+				//console.log(result);
+				var stateCode = Number(result.state_code);
+
+				switch(stateCode){
+					case 100://All Right
+						console.log("Complete");
+						$("#loadingBox .loadingMessage").html("문서 준비 완료");
+						clearInterval(checkState);
+						$.hideLoading();
+						
+						if(typeof result.file_download === "undefined"){
+							result.file_download = 0
+						}
+
+						//console.log("Download: " + result.file_download);
+						$.docRenderIframe(result.organization_code, result.file_id, result.owner_id, result.file_name, result.file_download);
+					break;
+					case 200: // File Doesn't Exists - file have to upload.
+						$("#loadingBox .loadingMessage").html("파일을 변환 준비중 입니다.");
+					break;
+					case 201: // File Doesn't Exists - file have to upload.
+						$("#loadingBox .loadingMessage").html("파일을 변환 중입니다.");
+					break;
+					case 202: // File uploading
+						$("#loadingBox .loadingMessage").html("변환된 파일을 전송 중입니다.");
+					break;
+					case 300: // File uploading
+						clearInterval(checkState);
+						$("#loadingBox .loadingIcon").remove();
+						$("#loadingBox .loadingMessage").html("변환할 수 없는 파일 입니다.<br/>");
+						var downloadHtml = "/local/ubdoc/adownload.php?id=" + id + "&tp=" + tp + "&pg=" + pg + "&item=" + item + "&fid=" + fid;
+						$("#loadingBox .loadingMessage").after("<a href=" + downloadHtml + " target='_blank'> 다운로드</a>"); 
+					break;					
+					default: // File uploading
+						$("#loadingBox .loadingMessage").html("Unknown Error");
+					break;
+				}
+				
+	        },//Success
+			error: function(request,status,error){
+				console.log("SERVER ERROR");
+			}	
+		});	
+	}
+
+	$.getMeta = function(type, meta){
+		
+		return $("meta[" + type + "='" + meta + "']").attr("content");
+	}
+
+	$.hideLoading = function(){
+		$("#uiBlock").fadeOut();
+		$("#loadingBox").fadeOut();		
+	}
+	
+})(jQuery);

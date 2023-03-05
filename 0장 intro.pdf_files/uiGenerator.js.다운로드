@@ -1,0 +1,151 @@
+actionFlag = false;
+actionFlag_timer = 300;	
+function actionFlagUp(){actionFlag = true; setTimeout(function(){ actionFlag = false;}, actionFlag_timer);}
+
+(function($){
+	
+
+	$.uiGenerator = function(doc_url)
+	{
+
+		/* head Meta info Generate */
+		/*
+		var meta_doc_url = "<meta property='doc_url' content='" + doc_url + "'>";
+		meta_doc_url = $.parseHTML(meta_doc_url);
+		$('head').append(meta_doc_url);
+		*/
+		
+		/* App Tag Generate */
+		var app = "<div id='app'></div>";
+		
+		var header = "<div id='header'><div id='btnLeft' class='btnLeft pointer fl'><i class='xi-bars'></i></div><div id='btnRight' class='btnRight pointer fr'><i class='xi-bell-o'></i></div></div>";
+		var container = "<div id='container' class='wrapper'></div>";
+	
+		var contentIframe = "<div id='contentIframe' class='contentIframe' style='position:absolute;top:-40px;width:100%;height:100%;border:0px;'></div>";
+	
+		var leftContent = "<div id='leftContent' class='leftContent'></div>";
+		var leftSidebar = "<div id='leftSidebar' class='leftSidebar'>" + leftContent + "</div>";
+		var leftContainer = "<div id='leftContainer' class='leftContainer'>" + leftContent + "</div>";
+	
+		var rightContent = "<div id='rightContent' class='rightContent'> </div>";	
+		var rightSidebar = "<div id='rightSidebar' class='rightSidebar'>" + rightContent + "</div>";
+		var rightContainer = "<div id='rightContainer' class='rightContainer'>" + rightContent + "</div>";
+
+		var centerContainer = "<div id='centerContainer' class='centerContainer'></div>"; 
+		var contentBody = "<div id='content_body'></div>";
+
+		var dismiss = "<div id='dismiss'></div>";
+		var uiBlock = "<div id='uiBlock'></div>";
+		
+		var noteTool = "<div class='noteTools'></div>";
+		
+		var loadingBox = "<div id='loadingBox'><div class='loadingIcon'><i class='xi-spinner-3 xi-spin'></i></div><div class='loadingMessage'></div></div>";
+		
+		app = $.parseHTML(app);
+		header = $.parseHTML(header);
+		container = $.parseHTML(container);
+		
+		contentIframe = $.parseHTML(contentIframe);
+
+		dismiss = $.parseHTML(dismiss);
+		uiBlock = $.parseHTML(uiBlock);
+		noteTool = $.parseHTML(noteTool);					
+		
+		centerContainer = $.parseHTML(centerContainer);
+		contentBody = $.parseHTML(contentBody);
+		
+		loadingBox = $.parseHTML(loadingBox);
+		
+		$("body").append(app);
+		//$(app).append(header);
+		$(app).append(container);
+		//$(app).append(contentIframe);
+		
+		$(app).append(leftSidebar);
+		$(app).append(rightSidebar);
+		$(app).append(dismiss);
+		$(app).append(uiBlock);		
+
+		$(container).append(centerContainer);
+		//$(container).append(leftContainer);
+		//$(container).append(rightContainer);
+		
+		$(centerContainer).append(contentBody);
+		$(app).append(loadingBox);
+
+		$("#btnLeft").bind('touchstart click', function(){if (!actionFlag) {actionFlagUp();
+				$( "#leftSidebar" ).animate({
+				    'left': "0px",
+				  },260);
+				$("#dismiss").addClass("rightToggled");
+				$("#dismiss").fadeIn(250);
+				$("#uiBlock").fadeIn(250);				  
+			}
+		});
+
+		$("#btnRight").bind('touchstart click', function(){if (!actionFlag) {actionFlagUp();
+	
+				$( "#rightSidebar" ).animate({
+				    'right': "0px",
+				  },260);
+				$("#dismiss").addClass("rightToggled");
+				$("#dismiss").fadeIn(250);
+				$("#uiBlock").fadeIn(250);
+
+			}
+		});
+		
+		$("#dismiss").bind('touchstart click', function(){if (!actionFlag) {actionFlagUp();
+				$( "#leftSidebar" ).animate({
+				    'left': "-230px",
+				  },260);
+				$( "#rightSidebar" ).animate({
+				    'right': "-230px",
+				  },260);				  
+				$("#dismiss").removeClass("rightToggled");
+				$("#dismiss").removeClass("rightToggled");				
+				$("#dismiss").fadeOut(250);
+				$("#uiBlock").fadeOut(250);
+			}
+		});		
+
+		
+
+
+	}
+
+	$.dismiss = function(status){
+		
+	}
+
+	$.leftSidebar = function(status){
+		
+		switch(status){
+			case "on":
+			
+			break;
+			case "off":
+			
+			break;
+			default:
+			
+			break;						
+		}
+		
+	}
+
+	$.rightSidebar = function(status){
+
+		switch(status){
+			case "on":
+				
+			break;
+			case "off":
+			
+			break;					
+		}
+		
+	}
+
+})(jQuery);
+//# sourceMappingURL=uiGenerator.js.map

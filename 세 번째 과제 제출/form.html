@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+ <h1 align="center">WebClass.ME</h1>
+ <hr width="800"><br>
+ <table width="800" align= "center">
+ <tr><td>
+ <form>
+ <fieldset>
+ <legend>로그인</legend>
+ <label for="user_id"> 아이디:</label>
+  <input type="text" name="id" size=20><br>
+ <label for="user_pw">비밀번호:</label>
+  <input type="password" name="pw" size=20><br><br>
+ </fieldset><br>
+ <fieldset>
+ <legend>도서 검색</legend>
+ <label for="book_name">도서명:</label>
+ <input type="text" name="book" size=80><br>
+ 검색범위: <input type="radio" name="s_type" valur="keyword"><label for="keyword">키워드
+        </label>
+        <input type="radio" name="s_type" value="content"><label for="content">본문내용</label><br>
+ 자료 유형: <input type="checkbox" name="books" value="all"> 전체
+         <input type="checkbox" name="books" value="book"> 단행본
+         <input type="checkbox" name="books" value="book"> 학술지 
+		 <input type="checkbox" name="books" value="non_book"> 비도서<br><br>
+ </fieldset><br>
+ <fieldset>
+ <legend>오픈 리소스 검색</legend>
+ <label for="open_keyword">키워드:</label>
+ <input type="text" name="book" size=60><br>
+ 검색범위:<select name="search" size="1">
+       <option value="rss"> RISS </option>
+	   <option value="ndsl"> NDSL </option>
+	   <option value="naver">네이버전문정보 </option>
+	   <option value="wordcat"> WordCat </option>
+	   <option value="library">국회도서관</option>
+	   </select><br><br>
+ </fieldset><br>
+ <input type="reset" value="지우기">
+ <input type="submit" value="전송하기"> <br><br>
+ </form>
+ </td></tr>
+ <table>
+ <hr width="800">
+ <p align="center">Copyright&copy;WebClass.ME.All Rights Reserved.</p>

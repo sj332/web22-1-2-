@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+ <body>
+  <header>
+   <h1 align= "center">이력서</h1>
+  </header>
+  <hr width ="1600">
+  <article>
+  
+  
+<br>
+<section>
+   <table border = "1">
+   <caption font size="large">인적사항</caption>
+   <tr>
+    <td rowspan="7">사진</td><td rowspan ="3">성명</td><td>한글</td><td>이세진</td><td>생년월일</td><td>2002년 9월 11일</td><td>[만]20세</td>
+</tr>
+   <tr>
+    <td>한문</td><td colspan ="4">李世珍</td>
+</tr>
+   <tr>
+    <td>영문</td><td colspan ="4">Sejin Lee</td>
+</tr>
+   <tr>
+    <td colspan="2">휴대전화</td><td colspan ="4">01047503545</td>
+</tr>
+   <tr>
+    <td colspan="2">주소</td><td colspan ="4">청사서로 65번길(한아름아파트) 109동 1402호</td>
+</tr>
+   <tr>
+    <td colspan="2">E-MAIL</td><td colspan ="4">lsj02@sookmyung.ac.kr</td>
+</tr>
+   <tr>
+    <td colspan="2">희망연봉</td><td colspan ="4">5000만원/년</td>
+</tr>
+</table>
+    </section>
+		
+<br>
+<section>
+ <table border = "1">
+   <caption font size :"large">학력사항</caption>
+    <tr>
+	 <td rowspan ="3">학력사항</td><td>졸업일자</td><td>학교명</td><td>전공</td>
+	</tr>
+	<tr>
+	 <td>2021년 2월</td><td>대전둔산여자고등학교 졸업</td><td> </td>
+	</tr>
+	<tr>
+	 <td>2026년 2월</td><td>숙명여자대학교 졸업</td><td>ICT융합공학부 전자공학전공</td>
+	</tr>
+ </table>
+</section>
+
+
+<br>
+<section>
+ <table border = "1">
+   <caption font size :"large">경력사항</caption>
+    <tr>
+	 <td rowspan="4"> 경력사항</td><td>근무기간</td><td>회사명</td><td>업종</td><td>담당업무</td>
+	</tr>
+	<tr>
+	 <td>2021년 3월 ~ 7월</td><td>OO라멘</td><td>서비스업</td><td>손님 응대, 서빙</td>
+	</tr>
+	<tr>
+	 <td>2021년 4월 ~ 7월</td><td>OO초밥</td><td>서비스업</td><td>주방 보조, 서빙</td>
+	</tr>
+	<tr>
+	 <td>2026년 3월 ~ </td><td>OO기업</td><td>관리직</td><td>생산관리</td>
+	</tr>
+ </table>
+</section>
+
+
+<br>
+<section>
+ <table border = "1">
+   <caption font size :"large">자격증</caption>
+    <tr>
+	 <td rowspan ="4">자격증</td><td>자격명</td><td>발급기관명</td><td>취득일</td>
+	</tr>
+	<tr>
+	 <td>컴활 1급</td><td>대한상공회의소</td><td>2022년 8월</td
+	</tr>
+	<tr>
+	 <td>전기기사</td><td>한국산업인력공단</td><td>2024년 2월</td
+	</tr>
+	<tr>
+	 <td>전기공사기사</td><td>한국산업인력공단</td><td>2024년 8월</td
+	</tr>
+ </table>
+</section>
+ </article>
+<hr width ="1600">
+ <footer align ="right"> 
+  <p>2022년 3월 28일</p>
+  <p>지원자: 이세진(서명)</p>
+ </footer>
+ </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  #fsttitle{color:black;}
+  a:hover{color:black; text-decoration:none;}
+  a{color:lightgray; text-decoration:none;}
+  a:link{color:lightgray; text-decoration:none;} 
+  a:visited{color:lightgray; text-decoration:none;} 
+  img{border-radius:1%;}
+  #toc-content {
+    display: none;
+  }
+  #toc-toggle {
+    cursor: pointer;
+    color: #2962ff;
+  }
+  #toc-toggle:hover {
+    text-shadow:1px 1px 2px gray;
+  }
+  * {margin:0;padding:0}
+    li {list-style:none;}
+	#gallery{
+        width:700px;margin:30px auto; 
+        border:1px solid #999;
+        box-shadow:0 5px 5px rgba(0,0,0,0.3);}
+	#gallery h1 {text-align:center;}
+    #gallery img {border:1px solid #666; }
+    #photo {text-align:center;}
+    #photo_list ul { width:900px; margin:0 auto; overflow:hidden;}
+    #photo_list ul li {width:100px; float:left; text-align:center;}
+    #photo_list {width:300px; margin:10px auto; overflow:hidden;}
+    .btn_wrap {text-align:center;}
+    .btn_wrap a {font-weight:bold;}
+  }
+</style>
+<link rel='stylesheet' href='main.css'>
+<script>
+window.onload = function() {
+    //[1] 포토 목록에 작은 이미지를 클릭했을때 큰이미지로 변경
+
+    //클릭이벤트를 등록하기 위해 포토 목록에 4개의 <a>요소를 모두 선택
+    var list_zone = document.getElementById("inner_list");
+    var list_a = list_zone.getElementsById("a");
+	var list_a = list_zone.getElementsById("b");
+    var list_a = list_zone.getElementsById("c");
+	var list_a = list_zone.getElementsById("d");
+
+
+    //포토 리스트의 모든 <a>에 클릭 이벤트를 등록하기 위해서 반복문을 이용하여 등록
+    for(var i=0; i<=list_a.length; i++) {
+        list_a[i].onclick=function(){
+            var ph=document.getElementById("photo").children[0];
+            ph.src = this.href;
+            return false; //<a>요소를 클릭했을때 링크가 되지 않도록 함.
+        }
+    }
+
+    //[2] 이전, 다음 버튼을 클릭 할때마다 <ul>이 100px만큼 증가 또는 감소되어
+    //    좌,우측으로 이동
+
+    var n_btn = document.getElementById("btn_next");
+    var m_num = 0;
+    n_btn.onclick = function() {
+        if(m_num>=list_a.length-4) return false;
+        m_num++;
+        list_zone.style.marginLeft=-100*m_num+"px";
+        
+        return false;
+    }
+
+    var b_btn = document.getElementById("btn_before");
+    b_btn.onclick=function() {
+        if(m_num<=0) return false;
+        m_num--;
+        list_zone.style.marginLeft = -100*m_num+"px";
+    }
+
+  }
+</script>
+</head>
+<body>
+<body>
+<div id="start">
+<h2><table id="list"><tr align="center">
+<td id="title"><a href="index.html">
+<img src="ggd.jpg" alt="타이틀이미지" width="50"></a></td>
+<td><a href="daejeon.html"><span>대전이란?</span></a></td>
+<td><a href="district.html"><span>지역 추천</span></a></td>
+<td><a href="todo1.html"><span>맛집 추천</span></a></td>
+<td><a href="todo2.html"><span>To Do 리스트</span></a></td>
+<td><a href="festival.html"><span id="fsttitle">축제</span></a></td>
+</tr></div></table></h2>
+<hr>
+<div id="gallery">
+<p id="photo">
+<br><br>
+        <img src="bbang.jpg" width="500" height="750"alt="/">
+     </p>
+     <div id="photo_list">
+        <ul id="inner_list">
+<li><br>
+<a href="bbang.jpg" id="a" ><img src="bbang.jpg" alt="사진1"  
+				width="500" height="250"></a>
+				
+				</li>
+<li><br>
+<a href="art.jpg" id="b" ><img src="art.jpg" alt="사진2" 
+				width="500" height="250"></a>
+				</li>
+<li><br>
+<a href="science.jpg" id="d"><img src="science.jpg" alt="사진3" 
+				width="500" height="250"></a>
+				</li>
+</ul>
+</div>
+<p align="center">클릭하여 자세히 보기</p>
+<br>
+ </div>
+ <br><br><br>
+ <hr>
+<footer>
+<p align='center'>by 2214347 이세진 &copy; 숙명여자대학교 웹프로그래밍 첫걸음</p>
+</footer>
+</body>
+</html>

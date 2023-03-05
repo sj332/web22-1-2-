@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <style>
+  #dstitle{color:black;}
+  a:hover{color:black; text-decoration:none;}
+  a{color:lightgray; text-decoration:none;}
+  a:link{color:lightgray; text-decoration:none;} 
+  a:visited{color:lightgray; text-decoration:none;} 
+  img{border-radius:1%;}
+  li {list-style:none;}
+  #toc-content {
+    display: none;
+  }
+  #toc-toggle {
+    cursor: pointer;
+    color: #2962ff;
+	display:inline-block;
+	vertical-align:middle;
+  }
+  #toc-toggle:hover {
+    text-shadow:1px 1px 2px gray;
+  }
+  #diss{text-align:center;}
+</style>
+<link rel='stylesheet' href='main.css'>
+<script>
+alert('지도를 클릭해주세요.')
+</script>
+</head>
+<body>
+<div id="start">
+<h2><table id="list"><tr align="center">
+<td id="title"><a href="index.html">
+<img src="ggd.jpg" alt="타이틀이미지" width="50"></a></td>
+<td><a href="daejeon.html"><span>대전이란?</span></a></td>
+<td><a href="district.html"><span id="dstitle">지역 추천</span></a></td>
+<td><a href="todo1.html"><span>맛집 추천</span></a></td>
+<td><a href="todo2.html"><span>To Do 리스트</span></a></td>
+<td><a href="festival.html"><span>축제</span></a></td>
+</tr></div></table></h2>
+<hr>
+ <span id="toc-toggle" onclick="openCloseToc()" >
+ <img src="dis.jpg" align='center' width="500" height="500" id="diss"></span>
+<ul id="toc-content" align="center">
+  <li>
+  <img src="jung.png" width="150" align="center"> 
+  은행동, 으능정이 거리, 대전역, 시내, 성심당 본점
+  </li>
+  <br>
+  <li>
+  <img src="seo.png" width="150" align="center">
+  둔산동, 정부청사, 시청역, 번화가, 학원가</li>
+</ul>
+<script>
+  function openCloseToc() {
+    if(document.getElementById('toc-content').style.display === 'block') {
+      document.getElementById('toc-content').style.display = 'none';
+      document.getElementById('toc-toggle').textContent = '보이기';} 
+	else {
+      document.getElementById('toc-content').style.display = 'block';
+      document.getElementById('toc-toggle').textContent = '숨기기';
+    }
+  }
+</script>
+<hr>
+<footer>
+<p align='center'>by 2214347 이세진 &copy; 숙명여자대학교 웹프로그래밍 첫걸음</p>
+</footer>
+</body>
+</html>
